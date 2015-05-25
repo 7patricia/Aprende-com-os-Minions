@@ -68,11 +68,12 @@ body {
   padding-top: 7px;
 }
 .page-header h1 {
+  font-family: 'Chicle', cursive;
   padding: 0;
   margin: 0 8px;
   font-size: 24px;
   font-weight: lighter;
-  color: #2679b5;
+  color: #271b74;
 }
 .page-header h1 small {
   margin: 0 6px;
@@ -930,6 +931,19 @@ pre.prettyprint {
   margin: 12px 0;
   margin: 14px 0 13px;
 }
+.boxed {
+  font-family: 'Chicle', cursive;
+  text-align: center;
+  border-radius: 25px;
+  background-color:#f2d62e;
+  max-width: 600px;
+  min-height: 300px;
+  margin-left: 380px;
+  margin-right: auto;
+  font-size: 19.5px;
+} 
+
+
 [class*="vspace-14"] {
   max-height: 1px;
   min-height: 1px;
@@ -1021,9 +1035,6 @@ pre.prettyprint {
   margin: 12px 0;
   margin: 2px 0 1px 0;
 }
-.space-20{
-  padding-top: 0px;;
-}
 .space-0,
 [class*="vspace-0"] {
   max-height: 1px;
@@ -1086,8 +1097,8 @@ pre.prettyprint {
 .header.pink2 {
   border-bottom-color: #e69eb9;
 }
-.header.light-blue {
-  border-bottom-color: #dceefc;
+.header.yellow{
+  border-bottom-color: #f2d62e;
 }
 .header.light-red {
   border-bottom-color: #fec5c5;
@@ -1180,7 +1191,7 @@ pre.prettyprint {
   border-left-width: 0;
 }
 .ace-nav > li > a {
-  background-color: #2e6589;
+  background-color: #f2d62e;
   color: #FFF;
   display: block;
   line-height: inherit;
@@ -2725,6 +2736,7 @@ body.mob-safari .sidebar.sidebar-fixed {
   width: 44px;
 }
 .sidebar.menu-min .nav-list > li > a > .menu-text {
+  font-family: 'Chicle', cursive;
   display: none;
   text-align: left;
   position: absolute;
@@ -5486,8 +5498,9 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary,
 .btn-primary:focus {
-  background-color: #428bca !important;
-  border-color: #428bca;
+  border-radius: 15px;
+  background-color: #271b74 !important;
+  border-color:#271b74;
 }
 .btn-primary:hover,
 .btn-primary:active,
@@ -12683,7 +12696,9 @@ td .lbl:only-child {
 }
 .ace-thumbnails {
   list-style: none;
-  margin: 0;
+  margin-left: 100px;
+  margin-right: auto;
+
   padding: 0;
 }
 .ace-thumbnails > li {
