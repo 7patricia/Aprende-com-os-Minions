@@ -56,12 +56,14 @@ body {
   margin-left: 222px;
 }
 .page-content {
+  font-family: 'Chicle', cursive;
   background-color: #ffffff;
   position: relative;
   margin: 0;
   padding: 8px 20px 24px;
 }
 .page-header {
+  font-family: 'Chicle', cursive;
   margin: 0 0 12px;
   border-bottom: 1px dotted #e2e2e2;
   padding-bottom: 16px;
@@ -73,9 +75,10 @@ body {
   margin: 0 8px;
   font-size: 24px;
   font-weight: lighter;
-  color: #271b74;
+  color: #1F3A93;
 }
 .page-header h1 small {
+  font-family: 'Chicle', cursive;
   margin: 0 6px;
   font-size: 14px;
   font-weight: normal;
@@ -120,9 +123,10 @@ a:active {
   text-decoration: none;
 }
 h1 {
+  font-family: 'Chicle', cursive;
   font-size: 32px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
 }
 h1.smaller {
   font-size: 31px;
@@ -136,7 +140,7 @@ h1.block {
 h2 {
   font-size: 26px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Chicle', cursive;
 }
 h2.smaller {
   font-size: 25px;
@@ -150,7 +154,7 @@ h2.block {
 h3 {
   font-size: 22px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Chicle', cursive;
 }
 h3.smaller {
   font-size: 21px;
@@ -164,7 +168,7 @@ h3.block {
 h4 {
   font-size: 18px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Chicle', cursive;
 }
 h4.smaller {
   font-size: 17px;
@@ -178,7 +182,7 @@ h4.block {
 h5 {
   font-size: 15px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Chicle', cursive;
 }
 h5.smaller {
   font-size: 14px;
@@ -192,7 +196,7 @@ h5.block {
 h6 {
   font-size: 13px;
   font-weight: normal;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Chicle', cursive;
 }
 h6.smaller {
   font-size: 12px;
@@ -935,7 +939,7 @@ pre.prettyprint {
   font-family: 'Chicle', cursive;
   text-align: center;
   border-radius: 25px;
-  background-color:#f2d62e;
+  background-color:#F4D03F;
   max-width: 600px;
   min-height: 300px;
   margin-left: 380px;
@@ -946,7 +950,7 @@ pre.prettyprint {
   font-family: 'Chicle', cursive;
   text-align: center;
   border-radius: 25px;
-  background-color:#f2d62e;
+  background-color:#F4D03F;
   max-width: 1000px;
   min-height: 500px;
   margin-left: 40px;
@@ -1121,6 +1125,9 @@ pre.prettyprint {
 .header.pink2 {
   border-bottom-color: #e69eb9;
 }
+.letras.yellow{
+  color:#F2D62E;
+}
 .header.yellow{
   border-bottom-color: #f2d62e;
 }
@@ -1162,7 +1169,7 @@ pre.prettyprint {
   -webkit-box-shadow: none;
   box-shadow: none;
   min-height: 45px;
-  background: #000066;
+  background: #1F3A93;
 }
 .navbar .navbar-text,
 .navbar .navbar-link {
@@ -1215,7 +1222,7 @@ pre.prettyprint {
   border-left-width: 0;
 }
 .ace-nav > li > a {
-  background-color: #f2d62e;
+  background-color: #F4D03F;
   color: #FFF;
   display: block;
   line-height: inherit;
@@ -5524,8 +5531,8 @@ fieldset[disabled] .btn-default.active {
 .btn-primary:focus {
   font-family: 'Chicle', cursive;
   border-radius: 15px;
-  background-color: #271b74 !important;
-  border-color:#271b74;
+  background-color: #1F3A93 !important;
+  border-color:#1F3A93;
 }
 .btn-primary:hover,
 .btn-primary:active,
@@ -6219,8 +6226,8 @@ fieldset[disabled] .btn-white.btn-default.active {
   border-color: #abbac3;
 }
 .btn-white.btn-primary {
-  border-color: #8aafce;
-  color: #6688a6 !important;
+  border-color: #1F3A93;
+  color: #1F3A93 !important;
   /**
  //&:hover, &:focus, &.focus, .open > &.dropdown-toggle {
 	//color: saturate(darken(@txt-color , 5%) , 5%) !important;
@@ -7004,7 +7011,7 @@ fieldset[disabled] .btn-white.btn-grey.active {
 .btn-app.btn-primary,
 .btn-app.btn-primary.no-hover:hover,
 .btn-app.btn-primary.disabled:hover {
-  background: #2a8bcb !important;
+  background: #1F3A93 !important;
   background-image: -webkit-linear-gradient(top, #3b98d6 0%, #197ec1 100%) !important;
   background-image: -o-linear-gradient(top, #3b98d6 0%, #197ec1 100%) !important;
   background-image: linear-gradient(to bottom, #3b98d6 0%, #197ec1 100%) !important;
@@ -7012,7 +7019,7 @@ fieldset[disabled] .btn-white.btn-grey.active {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b98d6', endColorstr='#ff197ec1', GradientType=0) !important;
 }
 .btn-app.btn-primary:hover {
-  background: #1d6fa6 !important;
+  background: #1F3A93 !important;
   background-image: -webkit-linear-gradient(top, #267eb8 0%, #136194 100%) !important;
   background-image: -o-linear-gradient(top, #267eb8 0%, #136194 100%) !important;
   background-image: linear-gradient(to bottom, #267eb8 0%, #136194 100%) !important;
@@ -12501,7 +12508,7 @@ td .lbl:only-child {
   margin: 0 auto;
 }
 .login-layout {
-  background-color: #1D2024;
+  background-color: #FFFFFF;
 }
 .login-layout .main-container:before {
   display: none;
@@ -12546,7 +12553,7 @@ td .lbl:only-child {
 }
 .login-layout .widget-box .widget-main {
   padding: 16px 36px 36px;
-  background: #F7F7F7;
+  background: #F4D03F;
 }
 .login-layout .widget-box .widget-main form {
   margin: 0;
@@ -12563,8 +12570,8 @@ td .lbl:only-child {
   color: #CF7;
 }
 .login-box .toolbar {
-  background: #5090C1;
-  border-top: 2px solid #597597;
+  background: #1F3A93;
+  border-top: 2px solid #1F3A93;
 }
 .login-box .toolbar > div {
   width: 50%;
@@ -12591,8 +12598,8 @@ td .lbl:only-child {
   padding: 9px 18px;
 }
 .signup-box .toolbar {
-  background: #76B774;
-  border-top: 2px solid #759759;
+  background: #1F3A93;
+  border-top: 2px solid #1F3A93;
   padding: 9px 18px;
 }
 .forgot-box .back-to-login-link,
