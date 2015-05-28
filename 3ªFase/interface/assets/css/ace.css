@@ -942,7 +942,31 @@ pre.prettyprint {
   margin-right: auto;
   font-size: 19.5px;
 } 
-
+.boxed_aula{
+  font-family: 'Chicle', cursive;
+  text-align: center;
+  border-radius: 25px;
+  background-color:#f2d62e;
+  max-width: 1000px;
+  min-height: 500px;
+  margin-left: 40px;
+  margin-right: auto;
+  font-size: 19.5px;
+} 
+.video{
+  margin-top:100px;
+}
+.boxed_exercicio{
+  font-family: 'Chicle', cursive;
+  text-align: center;
+  border-radius: 25px;
+  background-color:#f2d62e;
+  max-width: 800px;
+  min-height: 400px;
+  margin-left: 150px;
+  margin-right: auto;
+  font-size: 19.5px;
+}
 
 [class*="vspace-14"] {
   max-height: 1px;
@@ -5498,6 +5522,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary,
 .btn-primary:focus {
+  font-family: 'Chicle', cursive;
   border-radius: 15px;
   background-color: #271b74 !important;
   border-color:#271b74;
