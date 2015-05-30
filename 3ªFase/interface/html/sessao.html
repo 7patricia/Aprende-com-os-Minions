@@ -118,6 +118,17 @@
    	 document.getElementById("demo").innerHTML = x;
 	}
 	</script>
+	<script>
+		function myFunction2() {
+    	var x;
+    	if (confirm("Tens a certeza que pretendes eliminar esta sessão de estudo?") == true) {
+       	 x = "Dados Eliminados";
+    	} else {
+       	 x = "You pressed Cancel!";
+   	 }
+   	 document.getElementById("demo").innerHTML = x;
+	}
+	</script>
 
 		<!-- /section:basics/navbar.layout -->
 		<div class="main-container" id="main-container">
@@ -178,7 +189,7 @@
 						</a>
 					</li>
 				</ul><!-- /.nav-list -->
-			<img style="margin-top: 130px; margin-left:-50px;" src="http://fc04.deviantart.net/fs71/i/2013/241/9/e/minion_by_bibi97nd-d6k9zm2.png" width="350" hegth="350">
+			<img style="margin-top: 175px; margin-left:50px;" src="http://www.progressive.com/content/images/auto/minion-mma.png" width="200" hegth="200">
 			</div>
 
 			<!-- /section:basics/sidebar -->
@@ -189,69 +200,51 @@
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								<center>Sessões de Estudo</center>
+								<center>Sessão #1</center>
 							</h1>
 						</div><!-- /.page-header -->
 
 						
 								<!-- PAGE CONTENT BEGINS -->
+								<center><div class="row">
+									<div style="margin-left:250px"class="col-xs-6">
 
-									<div>
-									<ul class="ace-thumbnails clearfix">
-										<li>
-											<a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-												<div class="text">
-													<div class="inner">Sample Caption on Hover</div>
-												</div>
-											</a>
-										</li>
-										<li>
-											<a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-												<div class="text">
-													<div class="inner">Sample Caption on Hover</div>
-												</div>
-											</a>
-										</li>
-										<li>
-											<a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-												<div class="text">
-													<div class="inner">Sample Caption on Hover</div>
-												</div>
-											</a>
-										</li>
-										<li>
-											<a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-												<div class="text">
-													<div class="inner">Sample Caption on Hover</div>
-												</div>
-											</a>
-										</li>
-										<li>
-											<a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-												<div class="text">
-													<div class="inner">Sample Caption on Hover</div>
-												</div>
-											</a>
-										</li>
-										<li>
-											<a class="cboxElement"href="sessao.html" title="Photo Title" data-rel="colorbox">
-												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-												<div class="text">
-													<div class="inner">Sample Caption on Hover</div>
-												</div>
-											</a>
-										</li>
-																	
-									</ul>
-								</div>	
-								<a href="novasessao.html"><button style="margin-top: 280px;margin-left:880px;"class="btn btn-lg btn-primary">Criar Sessão de Estudo</button></a>
+										<label  class="control-label bolder blue">Aulas</label>
+									<div class="progress">
+									  	<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; max-width=200px">
+									    0%
+									  </div>
+									</div>
+								</div>
+									</div>
 
-								
+									<div class="row">
+									<div style="margin-left:250px"class="col-xs-6">
+									<label  class="control-label bolder blue">Exercícios</label>
+									<div class="progress">
+									  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 50%;">
+									    50%
+									  </div>
+									</div>									
+									</div>
+									</div>
+									<div class="row">
+									<div style="margin-left:250px" class="col-xs-6">
+									<label  class="control-label bolder blue">Testes</label>
+									<div class="progress">
+									  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 80%;">
+									    80%
+									  </div>
+									  </div>
+									  </div>
+									</div>
+									</center>
+											
+
+											<a href="#"><button  style="margin-left:250px; margin-top:100px" class="btn btn-lg btn-primary">Continuar</button></a>
+											<button onclick="myFunction2()"style="margin-left:125px; margin-top:100px" class="btn btn-lg btn-primary">Continuar</button>
+											<a href="sessoes.html"><button style="margin-left:125px; margin-top:100px" class="btn btn-lg btn-primary">Sair</button></a>					
+
 								<!-- PAGE CONTENT ENDS -->
 					</div><!-- /.page-content -->
 				</div>

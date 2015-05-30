@@ -82,11 +82,11 @@
 								
 
 								<li>
-									<a href="profile.html">
+									<a href="preferencias.html">
 										Preferências
 									</a>
 								</li>
-								<li>
+								<li onclick="myFunction()">
 									<a href="#">
 										Repor Estatistícas
 									</a>
@@ -107,7 +107,17 @@
 				<!-- /section:basics/navbar.dropdown -->
 			</div><!-- /.navbar-container -->
 		</div>
-
+		<script>
+		function myFunction() {
+    	var x;
+    	if (confirm("Tens a certeza que pretendes eliminar todos os teus dados?") == true) {
+       	 x = "Dados Eliminados";
+    	} else {
+       	 x = "You pressed Cancel!";
+   	 }
+   	 document.getElementById("demo").innerHTML = x;
+	}
+	</script>
 		<!-- /section:basics/navbar.layout -->
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
@@ -167,7 +177,7 @@
 						</a>
 					</li>
 				</ul><!-- /.nav-list -->
-				<img style="margin-top: 100px; margin-left:50px;" src="http://www.designbolts.com/wp-content/uploads/2013/07/DESPICABLE-ME-2-Tim-The-Minion-PNG.png" width="180" hegth="180">
+				<img style="margin-top: 70px; margin-left:50px;" src="http://www.designbolts.com/wp-content/uploads/2013/07/DESPICABLE-ME-2-Tim-The-Minion-PNG.png" width="180" hegth="180">
 			</div>
 
 			<!-- /section:basics/sidebar -->

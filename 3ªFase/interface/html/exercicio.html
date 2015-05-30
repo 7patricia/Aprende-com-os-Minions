@@ -81,11 +81,11 @@
 								
 
 								<li>
-									<a href="profile.html">
+									<a href="preferencias.html">
 										Preferências
 									</a>
 								</li>
-								<li>
+								<li onclick="myFunction()">
 									<a href="#">
 										Repor Estatistícas
 									</a>
@@ -106,6 +106,17 @@
 				<!-- /section:basics/navbar.dropdown -->
 			</div><!-- /.navbar-container -->
 		</div>
+		<script>
+		function myFunction() {
+    	var x;
+    	if (confirm("Tens a certeza que pretendes eliminar todos os teus dados?") == true) {
+       	 x = "Dados Eliminados";
+    	} else {
+       	 x = "You pressed Cancel!";
+   	 }
+   	 document.getElementById("demo").innerHTML = x;
+	}
+	</script>
 
 		<!-- /section:basics/navbar.layout -->
 		<div class="main-container" id="main-container">
@@ -166,7 +177,7 @@
 						</a>
 					</li>
 				</ul><!-- /.nav-list -->
-			<img style="margin-top: 100px; margin-left:50px;" src="http://i2.minus.com/iDS4TYBBVdzB6.png" width="170" hegth="170">
+			<img style="margin-top: 120px; margin-left:50px;" src="http://3.bp.blogspot.com/-iyWCYN4hDzA/UxhRJWhIKeI/AAAAAAAAEm8/1vDyyoKBzOI/s1600/minion_png_by_kathyvip-d6ngs5k.png" width="180" hegth="180">
 			</div>
 
 			<!-- /section:basics/sidebar -->

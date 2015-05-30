@@ -81,12 +81,12 @@
 							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 								
 
-								<li>
-									<a href="profile.html">
+								<li >
+									<a href="preferencias.html">
 										Preferências
 									</a>
 								</li>
-								<li>
+								<li onclick="myFunction()">
 									<a href="#">
 										Repor Estatistícas
 									</a>
@@ -107,6 +107,18 @@
 				<!-- /section:basics/navbar.dropdown -->
 			</div><!-- /.navbar-container -->
 		</div>
+
+	<script>
+		function myFunction() {
+    	var x;
+    	if (confirm("Tens a certeza que pretendes eliminar todos os teus dados?") == true) {
+       	 x = "Dados Eliminados";
+    	} else {
+       	 x = "You pressed Cancel!";
+   	 }
+   	 document.getElementById("demo").innerHTML = x;
+	}
+	</script>
 
 		<!-- /section:basics/navbar.layout -->
 		<div class="main-container" id="main-container">
