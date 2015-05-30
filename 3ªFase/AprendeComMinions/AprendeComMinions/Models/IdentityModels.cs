@@ -21,9 +21,17 @@ namespace AprendeComMinions.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("MinionsContext", throwIfV1Schema: false)
         {
         }
+
+        public DbSet<Aula> Aulas { get; set; }
+        public DbSet<SessaoEstudo> SessoesEstudo { get; set; }
+        public DbSet<Teste> Testes { get; set; }
+        public DbSet<Pergunta> Perguntas { get; set; }
+        public DbSet<Exercicio> Exercicios { get; set; }
+        public DbSet<Duvida> Duvidas { get; set; }
+        public DbSet<Resposta> Respostas { get; set; }
 
         public static ApplicationDbContext Create()
         {

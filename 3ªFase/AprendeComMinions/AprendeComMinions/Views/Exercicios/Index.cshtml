@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AprendeComMinions.Models.Exercicio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GrauDif)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tema)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrauDif)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tema)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ExercicioID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ExercicioID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ExercicioID })
+        </td>
+    </tr>
+}
+
+</table>
