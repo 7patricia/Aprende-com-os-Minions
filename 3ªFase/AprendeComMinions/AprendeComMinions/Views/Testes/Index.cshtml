@@ -1,45 +1,239 @@
 ﻿@model IEnumerable<AprendeComMinions.Models.Teste>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Testes";
 }
+		<!-- /section:basics/navbar.layout -->
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+    </script>
 
-<h2>Index</h2>
+    <!-- #section:basics/sidebar -->
+    <div id="sidebar" class="sidebar                  responsive">
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+        </script>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.DataRealizacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Classificacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tema)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataRealizacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Classificacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tema)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.TesteID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.TesteID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.TesteID })
-        </td>
-    </tr>
-}
 
-</table>
+        <ul class="nav nav-list">
+            <li class="">
+                <a href="@Url.Action("Index","Home")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Hello-icon.png">
+                    <span class="menu-text"> Início </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href="@Url.Action("Index", "Aula")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Amazed-icon.png">
+                    <span class="menu-text">
+                        Aulas
+                    </span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="@Url.Action("Index", "Exercicios")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Reading-icon.png">
+                    <span class="menu-text"> Vamos praticar? </span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="@Url.Action("Index", "Testes")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shout-icon.png">
+                    <span class="menu-text"> Pronto para ser posto à prova? </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("Index", "SessaoEstudoes")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/32/Minion-Bananas-icon.png">
+                    <span class="menu-text"> Sessões de Estudo </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="estatisticas.html">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shy-icon.png">
+                    <span class="menu-text"> Vê Como Te Tens Saído! </span>
+                </a>
+            </li>
+        </ul><!-- /.nav-list -->
+        <img style="margin-top: 70px; margin-left:50px;" src="http://www.designbolts.com/wp-content/uploads/2013/07/DESPICABLE-ME-2-Tim-The-Minion-PNG.png" width="180" hegth="180">
+    </div>
+
+
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    <center>Testes</center>
+                </h1>
+            </div>
+            <script type="text/javascript">
+                try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+            </script>
+
+
+            <!-- PAGE CONTENT BEGINS -->
+
+
+
+
+            <div>
+                <ul class="ace-thumbnails clearfix">
+                    <li>
+                        <a class="cboxElement" href="@Url.Action("Teste","Testes")" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="cboxElement" href="aula.html" title="Photo Title" data-rel="colorbox">
+                            <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">Sample Caption on Hover</div>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.page-content -->
+    </div>
+</div><!-- /.main-content -->

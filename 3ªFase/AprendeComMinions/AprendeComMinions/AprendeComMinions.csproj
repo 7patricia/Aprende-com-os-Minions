@@ -205,37 +205,13 @@
     <Compile Include="Migrations\201505292124083_UpDates.Designer.cs">
       <DependentUpon>201505292124083_UpDates.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505300734268_MaisUpdates.cs" />
-    <Compile Include="Migrations\201505300734268_MaisUpdates.Designer.cs">
-      <DependentUpon>201505300734268_MaisUpdates.cs</DependentUpon>
+    <Compile Include="Migrations\201506031046080_AddAllTablesofMinions.cs" />
+    <Compile Include="Migrations\201506031046080_AddAllTablesofMinions.Designer.cs">
+      <DependentUpon>201506031046080_AddAllTablesofMinions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505300845545_TabelasUpdates.cs" />
-    <Compile Include="Migrations\201505300845545_TabelasUpdates.Designer.cs">
-      <DependentUpon>201505300845545_TabelasUpdates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505301413205_TabelasUpdates1.cs" />
-    <Compile Include="Migrations\201505301413205_TabelasUpdates1.Designer.cs">
-      <DependentUpon>201505301413205_TabelasUpdates1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505301524454_lixo.cs" />
-    <Compile Include="Migrations\201505301524454_lixo.Designer.cs">
-      <DependentUpon>201505301524454_lixo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506011818031_addUsers.cs" />
-    <Compile Include="Migrations\201506011818031_addUsers.Designer.cs">
-      <DependentUpon>201506011818031_addUsers.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506021102164_EditSessaoEstuco.cs" />
-    <Compile Include="Migrations\201506021102164_EditSessaoEstuco.Designer.cs">
-      <DependentUpon>201506021102164_EditSessaoEstuco.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506021519489_UpdateSessaoEstudo.cs" />
-    <Compile Include="Migrations\201506021519489_UpdateSessaoEstudo.Designer.cs">
-      <DependentUpon>201506021519489_UpdateSessaoEstudo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506021746025_UpdateTabelasdjkcndskjcs.cs" />
-    <Compile Include="Migrations\201506021746025_UpdateTabelasdjkcndskjcs.Designer.cs">
-      <DependentUpon>201506021746025_UpdateTabelasdjkcndskjcs.cs</DependentUpon>
+    <Compile Include="Migrations\201506031108483_addViewPageAula.cs" />
+    <Compile Include="Migrations\201506031108483_addViewPageAula.Designer.cs">
+      <DependentUpon>201506031108483_addViewPageAula.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -308,37 +284,25 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Aula\Create.cshtml" />
-    <Content Include="Views\Aula\Delete.cshtml" />
-    <Content Include="Views\Aula\Details.cshtml" />
-    <Content Include="Views\Aula\Edit.cshtml" />
     <Content Include="Views\Aula\Index.cshtml" />
-    <Content Include="Views\SessaoEstudoes\Create.cshtml" />
-    <Content Include="Views\SessaoEstudoes\Delete.cshtml" />
-    <Content Include="Views\SessaoEstudoes\Details.cshtml" />
-    <Content Include="Views\SessaoEstudoes\Edit.cshtml" />
+    <Content Include="Views\SessaoEstudoes\Sessao.cshtml" />
     <Content Include="Views\SessaoEstudoes\Index.cshtml" />
-    <Content Include="Views\Testes\Create.cshtml" />
-    <Content Include="Views\Testes\Delete.cshtml" />
-    <Content Include="Views\Testes\Details.cshtml" />
-    <Content Include="Views\Testes\Edit.cshtml" />
     <Content Include="Views\Testes\Index.cshtml" />
     <Content Include="Views\Perguntas\Create.cshtml" />
     <Content Include="Views\Perguntas\Delete.cshtml" />
     <Content Include="Views\Perguntas\Details.cshtml" />
     <Content Include="Views\Perguntas\Edit.cshtml" />
     <Content Include="Views\Perguntas\Index.cshtml" />
-    <Content Include="Views\Exercicios\Create.cshtml" />
-    <Content Include="Views\Exercicios\Delete.cshtml" />
-    <Content Include="Views\Exercicios\Details.cshtml" />
-    <Content Include="Views\Exercicios\Edit.cshtml" />
     <Content Include="Views\Exercicios\Index.cshtml" />
     <Content Include="Views\Duvidas\Create.cshtml" />
     <Content Include="Views\Duvidas\Delete.cshtml" />
     <Content Include="Views\Duvidas\Details.cshtml" />
     <Content Include="Views\Duvidas\Edit.cshtml" />
     <Content Include="Views\Duvidas\Index.cshtml" />
-    <Content Include="Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Views\Aula\PageAula.cshtml" />
+    <Content Include="Views\Testes\Teste.cshtml" />
+    <Content Include="Views\Exercicios\Exercicio.cshtml" />
+    <Content Include="Views\SessaoEstudoes\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -375,29 +339,11 @@
     <EmbeddedResource Include="Migrations\201505292124083_UpDates.resx">
       <DependentUpon>201505292124083_UpDates.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505300734268_MaisUpdates.resx">
-      <DependentUpon>201505300734268_MaisUpdates.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506031046080_AddAllTablesofMinions.resx">
+      <DependentUpon>201506031046080_AddAllTablesofMinions.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505300845545_TabelasUpdates.resx">
-      <DependentUpon>201505300845545_TabelasUpdates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505301413205_TabelasUpdates1.resx">
-      <DependentUpon>201505301413205_TabelasUpdates1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505301524454_lixo.resx">
-      <DependentUpon>201505301524454_lixo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506011818031_addUsers.resx">
-      <DependentUpon>201506011818031_addUsers.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506021102164_EditSessaoEstuco.resx">
-      <DependentUpon>201506021102164_EditSessaoEstuco.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506021519489_UpdateSessaoEstudo.resx">
-      <DependentUpon>201506021519489_UpdateSessaoEstudo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506021746025_UpdateTabelasdjkcndskjcs.resx">
-      <DependentUpon>201506021746025_UpdateTabelasdjkcndskjcs.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506031108483_addViewPageAula.resx">
+      <DependentUpon>201506031108483_addViewPageAula.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

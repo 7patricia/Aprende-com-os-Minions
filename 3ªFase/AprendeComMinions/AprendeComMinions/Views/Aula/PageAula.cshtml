@@ -1,22 +1,24 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Aula";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-		<!-- /section:basics/navbar.layout -->
+<!-- /section:basics/navbar.layout -->
 <div class="main-container" id="main-container">
     <script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+        try { ace.settings.check('main-container', 'fixed') } catch (e) { }
     </script>
 
     <!-- #section:basics/sidebar -->
     <div id="sidebar" class="sidebar                  responsive">
         <script type="text/javascript">
-					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+            try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
         </script>
 
 
 
         <ul class="nav nav-list">
-            <li class="active">
+            <li class="">
                 <a href="@Url.Action("Index","Home")">
                     <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Hello-icon.png">
                     <span class="menu-text"> Início </span>
@@ -25,32 +27,32 @@
                 <b class="arrow"></b>
             </li>
 
-            <li class="">
+            <li class="active">
                 <a href=" @Url.Action("Index", "Aula") ">
-                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Amazed-icon.png">
-                    <span class="menu-text">
-                        Aulas
-                    </span>
+                    <img src=" http />/icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Amazed-icon.png">
+                <span class="menu-text">
+                    Aulas
+                </span>
                 </a>
             </li>
 
             <li class="">
                 <a href=" @Url.Action("Index", "Exercicios") ">
-                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Reading-icon.png">
-                    <span class="menu-text"> Vamos praticar? </span>
+                    <img src=" http />/icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Reading-icon.png">
+                <span class="menu-text"> Vamos praticar? </span>
                 </a>
             </li>
 
             <li class="">
                 <a href=" @Url.Action("Index", "Testes") ">
-                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shout-icon.png">
-                    <span class="menu-text"> Pronto para ser posto à prova? </span>
+                    <img src=" http />/icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shout-icon.png">
+                <span class="menu-text"> Pronto para ser posto à prova? </span>
                 </a>
             </li>
             <li class="">
                 <a href=" @Url.Action("Index", "SessaoEstudoes") ">
-                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/32/Minion-Bananas-icon.png">
-                    <span class="menu-text"> Sessões de Estudo </span>
+                    <img src=" http />/icons.iconarchive.com/icons/designbolts/despicable-me-2/32/Minion-Bananas-icon.png">
+                <span class="menu-text"> Sessões de Estudo </span>
                 </a>
             </li>
             <li class="">
@@ -60,10 +62,8 @@
                 </a>
             </li>
         </ul><!-- /.nav-list -->
-
+        <img style="margin-top: 100px; margin-left:50px;" src="http://i2.minus.com/iDS4TYBBVdzB6.png" width="170" hegth="170">
     </div>
-
-    <!-- /section:basics/sidebar -->
     <div class="main-content">
         <div class="main-content-inner">
 
@@ -71,29 +71,19 @@
             <div class="page-content">
                 <div class="page-header">
                     <h1>
-                        <center>Início</center>
+                        <center>Título da Aula</center>
                     </h1>
                 </div><!-- /.page-header -->
                 <!-- PAGE CONTENT BEGINS -->
+                <div class="boxed_aula">
 
-
-                <div class="boxed">
-                    Olá!
-                    <br>
-                    <br>
-                    Aqui vais encontrar várias aulas e exercícios para poderes aprender geometria com os Minions!
-                    <br>
-                    <br>
-                    Vamos começar?
-                    <br>
-                    <br>
-
-                    <a href="@Url.Action("Index","Aula")"><button class="btn btn-lg btn-primary">Sim!</button></a>  <button class="btn btn-lg btn-primary">Preciso de ajuda!</button>
                 </div>
-
-                <img style="margin-top: -130px;margin-left:50px;" width='250' heigth='250' src="http://4.bp.blogspot.com/-OYVgI7obPtE/UlNOmgaexfI/AAAAAAAAAGs/YdOqO-SmpHE/s1600/minion-transparent.png">
-
+                <a href="aulas.html"><button style="margin-top: 10px;margin-left:500px;" class="btn btn-lg btn-primary">Sair</button></a>
                 <!-- PAGE CONTENT ENDS -->
             </div><!-- /.page-content -->
         </div>
-    </div>
+    </div><!-- /.main-content -->
+
+</div>
+
+

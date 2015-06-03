@@ -194,37 +194,120 @@
 
 							
 								<!-- PAGE CONTENT BEGINS -->
-									<div style="visibility:visible;" class="boxed_exercicio">
-												<div class="col-xs-12 col-sm-5">
+									<div style="visibility:visible;">
+									<div style="margin-left:150px;margin-top:7px;"class="row">
+										<div class="col-md-6">
 											<div class="control-group">
 												
-												<img style="margin-left:230px;margin-top:7px;"alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="300" height="200">
+												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
 
-												<div style="margin-top: 28px;margin-left:400px;" class="checkbox">
+												<div  class="checkbox">
 													<label class="block">
 														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
-														<span  style="margin-left:-75px;" class="lbl"> Resposta1</span>
+														<span class="lbl"> Resposta1</span>
 													</label>
 												</div>
 
-												<div style="margin-left:400px;" class="checkbox">
+												<div  class="checkbox">
 													<label class="block">
 														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
-														<span style="margin-left:-75px;" class="lbl"> Resposta2</span>
+														<span  class="lbl"> Resposta2</span>
 													</label>
 												</div>
 
-												<div style="margin-left:400px;" class="checkbox">
+												<div  class="checkbox">
 													<label class="block">
 														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
-														<span style="margin-left:-75px;"class="lbl"> Resposta3</span>
+														<span class="lbl"> Resposta3</span>
 													</label>
 												</div>
-												<div class="row">
-												<a href=""><button style="margin-bottom: 10px;margin-left:-114px;"class="btn btn-lg btn-primary"><-</i>
-												</button></a>
-												<a href=""><button style="margin-top:-105px;margin-left:685px;"class="btn btn-lg btn-primary">-></i>
-											</button></a></div></div>
+											
+											<div class="col-md-6">
+												<div class="control-group">
+												
+												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+
+												<div  class="checkbox">
+													<label class="block">
+														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
+														<span   class="lbl"> Resposta1</span>
+													</label>
+												</div>
+
+												<div class="checkbox">
+													<label class="block">
+														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
+														<span  class="lbl"> Resposta2</span>
+													</label>
+												</div>
+
+												<div  class="checkbox">
+													<label class="block">
+														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
+														<span class="lbl"> Resposta3</span>
+													</label>
+												</div>
+											</div>
+											</div>
+												
+												
+											</div>
+										</div>
+										<div  style="margin-left:150px;margin-top:7px;" class="row">
+										<div class="col-md-6">
+											<div class="control-group">
+												
+												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+
+												<div  class="checkbox">
+													<label class="block">
+														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
+														<span   class="lbl"> Resposta1</span>
+													</label>
+												</div>
+
+												<div  class="checkbox">
+													<label class="block">
+														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
+														<span  class="lbl"> Resposta2</span>
+													</label>
+												</div>
+
+												<div  class="checkbox">
+													<label class="block">
+														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
+														<span class="lbl"> Resposta3</span>
+													</label>
+												</div>
+											
+											<div class="col-md-6">
+												<div class="control-group">
+												
+												<img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+
+												<div class="checkbox">
+													<label class="block">
+														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
+														<span  class="lbl"> Resposta1</span>
+													</label>
+												</div>
+
+												<div class="checkbox">
+													<label class="block">
+														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
+														<span  class="lbl"> Resposta2</span>
+													</label>
+												</div>
+
+												<div  class="checkbox">
+													<label class="block">
+														<input name="form-field-checkbox" class="ace input-lg" type="checkbox">
+														<span class="lbl"> Resposta3</span>
+													</label>
+												</div>
+											</div>
+											</div>
+												
 												
 											</div>
 										</div>
@@ -310,7 +393,7 @@
 						scaleColor: false,
 						lineCap: 'butt',
 						lineWidth: parseInt(size/10),
-						animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1000,
+						animate: /msie\s*(8|7|6)/.test(navigator.userAgent.toLowerCase()) ? false : 1500,
 						size: size
 					});
 				})
@@ -422,7 +505,7 @@
 				}
 				
 			
-				var sales_charts = $('#sales-charts').css({'width':'100%' , 'height':'220px'});
+				var sales_charts = $('#sales-charts').css({'width':'150%' , 'height':'220px'});
 				$.plot("#sales-charts", [
 					{ label: "Domains", data: d1 },
 					{ label: "Hosting", data: d2 },
@@ -467,7 +550,7 @@
 			
 			
 				$('.dialogs,.comments').ace_scroll({
-					size: 300
+					size: 150
 			    });
 				
 				
@@ -507,7 +590,7 @@
 					var offset = $(this).offset();
 			
 					var $w = $(window)
-					if (offset.top > $w.scrollTop() + $w.innerHeight() - 100) 
+					if (offset.top > $w.scrollTop() + $w.innerHeight() - 150) 
 						$(this).addClass('dropup');
 					else $(this).removeClass('dropup');
 				});

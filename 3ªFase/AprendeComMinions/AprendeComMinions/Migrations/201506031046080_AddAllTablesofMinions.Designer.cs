@@ -7,13 +7,13 @@ namespace AprendeComMinions.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class UpdateSessaoEstudo : IMigrationMetadata
+    public sealed partial class AddAllTablesofMinions : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateSessaoEstudo));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAllTablesofMinions));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506021519489_UpdateSessaoEstudo"; }
+            get { return "201506031046080_AddAllTablesofMinions"; }
         }
         
         string IMigrationMetadata.Source

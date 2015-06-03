@@ -118,9 +118,12 @@ namespace AprendeComMinions.Controllers
         //cotacao de cada pergunta=5
         public ActionResult CotacaoExercicio(List<Pergunta> perguntas) {
             int cotacao = 0;
-            foreach (Pergunta p in perguntas) { 
-                if(p.ValidaResposta())
+            foreach (Pergunta p in perguntas) {
+                //if (p.ValidaResposta())
+                //    ;
+                ;
             }
+            return null;
         }
 
 
