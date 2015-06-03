@@ -1,4 +1,5 @@
-﻿@model AprendeComMinions.Models.SessaoEstudo
+﻿using System.Linq;
+@model AprendeComMinions.Models.SessaoEstudo
 
 @{
     ViewBag.Title = "Create";
@@ -15,19 +16,33 @@
         <h4>SessaoEstudo</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Data, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Data, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Data, "", new { @class = "text-danger" })
-            </div>
+       
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Tema, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Tema, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Tema, "", new { @class = "text-danger" })
+               @{ 
+                   List<SelectListItem> listaTemas = new List<SelectListItem>();
+                        listaTemas.Add(new SelectListItem {
+                        Text = "Áreas",
+                        Value = "Áreas"
+                             });
+                             
+                        listaTemas.Add(new SelectListItem
+                        {
+                        Text = "Perímetros",
+                        Value = "Perímetros",
+                             });
+                             
+                        listaTemas.Add(new SelectListItem {
+                        Text = "Medidas de Comprimento",
+                        Value = "Medidas de Comprimento"
+                                });
+                        
+                }
+                        @Html.DropDownList("Tema da tua Sessao", listaTemas, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Tema, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -36,7 +51,7 @@
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
-    </div>
+    
 }
 
 <div>

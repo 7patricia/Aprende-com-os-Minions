@@ -10,6 +10,7 @@ namespace AprendeComMinions.Controllers
     {
         public ActionResult Index()
         {
+            @ViewBag.username = "ABC";
             return View();
         }
 

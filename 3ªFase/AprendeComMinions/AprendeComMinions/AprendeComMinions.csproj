@@ -29,6 +29,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -204,10 +205,6 @@
     <Compile Include="Migrations\201505292124083_UpDates.Designer.cs">
       <DependentUpon>201505292124083_UpDates.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505292342198_UpDates2.cs" />
-    <Compile Include="Migrations\201505292342198_UpDates2.Designer.cs">
-      <DependentUpon>201505292342198_UpDates2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201505300734268_MaisUpdates.cs" />
     <Compile Include="Migrations\201505300734268_MaisUpdates.Designer.cs">
       <DependentUpon>201505300734268_MaisUpdates.cs</DependentUpon>
@@ -215,6 +212,30 @@
     <Compile Include="Migrations\201505300845545_TabelasUpdates.cs" />
     <Compile Include="Migrations\201505300845545_TabelasUpdates.Designer.cs">
       <DependentUpon>201505300845545_TabelasUpdates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505301413205_TabelasUpdates1.cs" />
+    <Compile Include="Migrations\201505301413205_TabelasUpdates1.Designer.cs">
+      <DependentUpon>201505301413205_TabelasUpdates1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505301524454_lixo.cs" />
+    <Compile Include="Migrations\201505301524454_lixo.Designer.cs">
+      <DependentUpon>201505301524454_lixo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506011818031_addUsers.cs" />
+    <Compile Include="Migrations\201506011818031_addUsers.Designer.cs">
+      <DependentUpon>201506011818031_addUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506021102164_EditSessaoEstuco.cs" />
+    <Compile Include="Migrations\201506021102164_EditSessaoEstuco.Designer.cs">
+      <DependentUpon>201506021102164_EditSessaoEstuco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506021519489_UpdateSessaoEstudo.cs" />
+    <Compile Include="Migrations\201506021519489_UpdateSessaoEstudo.Designer.cs">
+      <DependentUpon>201506021519489_UpdateSessaoEstudo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506021746025_UpdateTabelasdjkcndskjcs.cs" />
+    <Compile Include="Migrations\201506021746025_UpdateTabelasdjkcndskjcs.Designer.cs">
+      <DependentUpon>201506021746025_UpdateTabelasdjkcndskjcs.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -227,6 +248,7 @@
     <Compile Include="Models\Resposta.cs" />
     <Compile Include="Models\SessaoEstudo.cs" />
     <Compile Include="Models\Teste.cs" />
+    <Compile Include="Models\Utilizador.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -316,6 +338,7 @@
     <Content Include="Views\Duvidas\Details.cshtml" />
     <Content Include="Views\Duvidas\Edit.cshtml" />
     <Content Include="Views\Duvidas\Index.cshtml" />
+    <Content Include="Views\Shared\_Sidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -352,14 +375,29 @@
     <EmbeddedResource Include="Migrations\201505292124083_UpDates.resx">
       <DependentUpon>201505292124083_UpDates.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505292342198_UpDates2.resx">
-      <DependentUpon>201505292342198_UpDates2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505300734268_MaisUpdates.resx">
       <DependentUpon>201505300734268_MaisUpdates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505300845545_TabelasUpdates.resx">
       <DependentUpon>201505300845545_TabelasUpdates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505301413205_TabelasUpdates1.resx">
+      <DependentUpon>201505301413205_TabelasUpdates1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505301524454_lixo.resx">
+      <DependentUpon>201505301524454_lixo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506011818031_addUsers.resx">
+      <DependentUpon>201506011818031_addUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506021102164_EditSessaoEstuco.resx">
+      <DependentUpon>201506021102164_EditSessaoEstuco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506021519489_UpdateSessaoEstudo.resx">
+      <DependentUpon>201506021519489_UpdateSessaoEstudo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506021746025_UpdateTabelasdjkcndskjcs.resx">
+      <DependentUpon>201506021746025_UpdateTabelasdjkcndskjcs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

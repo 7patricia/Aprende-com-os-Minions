@@ -46,15 +46,38 @@ namespace AprendeComMinions.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "SessaoEstudoID,Data,Tema")] SessaoEstudo sessaoEstudo)
+        public ActionResult Create([Bind(Include = "Tema")] SessaoEstudo sessaoEstudo)
         {
             if (ModelState.IsValid)
             {
+                string tema = (String)sessaoEstudo.Tema;
+                IEnumerable<Aula> aulasSessao = db.Aulas.Where(x => x.Tema == tema).ToList();
+                sessaoEstudo.Aulas = new List<Aula>();
+                foreach (Aula a in aulasSessao)
+                {
+                    sessaoEstudo.Aulas.Add(a);
+                }
+                
+
+                IEnumerable<Exercicio> exSessao = db.Exercicios.Where(x =>x.Tema == tema).ToList();
+                sessaoEstudo.Exercicios = new List <Exercicio>();
+                foreach (Exercicio e in exSessao) {
+                    sessaoEstudo.Exercicios.Add(e);
+                }
+
+                IEnumerable<Teste> testSessao = db.Testes.Where(x => x.Tema == tema).ToList();
+                sessaoEstudo.Testes = new List <Teste>();
+                foreach (Teste t in testSessao) {
+                    sessaoEstudo.Testes.Add(t);
+                }
+
+
                 db.SessoesEstudo.Add(sessaoEstudo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
 
+
+            }
             return View(sessaoEstudo);
         }
 

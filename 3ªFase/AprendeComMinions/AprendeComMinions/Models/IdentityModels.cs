@@ -32,6 +32,7 @@ namespace AprendeComMinions.Models
         public DbSet<Exercicio> Exercicios { get; set; }
         public DbSet<Duvida> Duvidas { get; set; }
         public DbSet<Resposta> Respostas { get; set; }
+        public DbSet<Utilizador> Utilizadores { get; set; }
 
         public static ApplicationDbContext Create()
         {

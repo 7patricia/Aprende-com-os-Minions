@@ -115,6 +115,15 @@ namespace AprendeComMinions.Controllers
             return RedirectToAction("Index");
         }
 
+
+        public int CoatacaoPergunta ( Resposta r) {
+            int cotacao = 0;
+            if (r.Descricao.Equals(r.RespostaCerta)) cotacao += 5;
+            return cotacao;
+        }
+
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

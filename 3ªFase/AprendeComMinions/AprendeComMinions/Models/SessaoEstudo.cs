@@ -13,7 +13,12 @@ namespace AprendeComMinions.Models
         public DateTime Data { get; set; }
         public string Tema { get; set; }
         public virtual ICollection<Aula> Aulas { get; set; }
+        public virtual ICollection<Aula> AulasVistas { get; set; }
         public virtual ICollection<Teste> Testes { get; set; }
+        public virtual ICollection<Teste> TestesResolvidos { get; set; }
         public virtual ICollection<Exercicio> Exercicios { get; set; }
+        public virtual ICollection<Exercicio> ExerciciosResolvidos { get; set; }
     }
+
+
 }

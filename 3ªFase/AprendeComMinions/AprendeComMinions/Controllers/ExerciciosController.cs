@@ -115,6 +115,16 @@ namespace AprendeComMinions.Controllers
             return RedirectToAction("Index");
         }
 
+        //cotacao de cada pergunta=5
+        public ActionResult CotacaoExercicio(List<Pergunta> perguntas) {
+            int cotacao = 0;
+            foreach (Pergunta p in perguntas) { 
+                if(p.ValidaResposta())
+            }
+        }
+
+
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
