@@ -14,12 +14,19 @@ namespace AprendeComMinions.Models
         public int UtilizadorID { get; set; }
         public String Username { get; set; }
         public String Password { get; set; }
+        public bool Administrador { get; set; }
         public int NrRespostasCertas { get; set; }
         public int NrRespostasErradas { get; set; }
         public int NrTestesRealizados { get; set; }
         public int NrSessoesEstudo { get; set; }
         public int GrauDif { get; set; }
         public List<String> TemasPreferidos { get; set; }
+        public virtual List<Teste> Testes { get; set;}
+        public virtual List<Aula> Aulas { get; set; }
+        public virtual List<Exercicio> Exercicios { get; set; }
+
+
+
 
 
         public int getLoggedID(int id) {
