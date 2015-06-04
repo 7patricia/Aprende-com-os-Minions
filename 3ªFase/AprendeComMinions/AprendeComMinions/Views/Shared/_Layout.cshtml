@@ -15,6 +15,7 @@
     <script src="../assets/js/ace-extra.js"></script>
 </head>
 <body class="no-skin">
+    @if (Request.IsAuthenticated) { 
     <div id="navbar" class="navbar navbar-default">
         <script type="text/javascript">
 				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
@@ -89,6 +90,7 @@
         document.getElementById("demo").innerHTML = x;
     }
     </script>
+    }
 
     <div class="main-container" id="main-container">
         <script type="text/javascript">

@@ -22,7 +22,7 @@
                                     <div class="widget-main">
                                         <div class="row">
                                             <section id="loginForm">
-                                                @using (Html.BeginForm("Iniciar Sessão", "Utilizadors", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                                @using (Html.BeginForm("Login", "Utilizadors", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                                                 {
                                                     @Html.AntiForgeryToken()
                                                     <h4>Insere os teus dados!</h4>

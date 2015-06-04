@@ -15,10 +15,14 @@ namespace AprendeComMinions.Controllers
         public ActionResult Index()
         {
             var email = User.Identity.GetUserName();
-            Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
 
-            @ViewBag.username = user;
-            return View();
+            if (email != "") {
+                Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+                @ViewBag.username = user.Username;
+                return View();
+            } else {
+                return RedirectToAction("Login", "Utilizadors");
+            }
         }
 
         public ActionResult About()

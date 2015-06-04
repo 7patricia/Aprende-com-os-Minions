@@ -113,7 +113,7 @@ namespace AprendeComMinions.Controllers
                     db.Utilizadores.Add(utilizador);
                     db.SaveChanges();
 
-                    return RedirectToAction("About", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
             }
 
@@ -148,7 +148,7 @@ namespace AprendeComMinions.Controllers
             {
                 case SignInStatus.Success:
                     //return RedirectToLocal(returnUrl);
-                    return RedirectToAction("Contact", "Home");
+                    return RedirectToAction("Index", "Home");
 
                 //case SignInStatus.LockedOut:
                 //    return View("Lockout");
@@ -225,7 +225,7 @@ namespace AprendeComMinions.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Login", "Utilizadors");
         }
 
         //

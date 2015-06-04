@@ -22,9 +22,10 @@ namespace AprendeComMinions.Controllers
         public ActionResult Index()
         {
             var email = User.Identity.GetUserName();
-            Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+            
+            if (email != "") { 
+                Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
                 
-            if (user == null) {
                 return RedirectToAction("Index", "Home");
             } else {
                 return View(db.Aulas.ToList());
