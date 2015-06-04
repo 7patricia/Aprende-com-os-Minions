@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AprendeComMinions.Models;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 
 namespace AprendeComMinions.Controllers
 {
@@ -17,7 +19,18 @@ namespace AprendeComMinions.Controllers
         // GET: Testes
         public ActionResult Index()
         {
-            return View(db.Testes.ToList());
+            var email = User.Identity.GetUserName();
+
+            if (email != "")
+            {
+                Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+                @ViewBag.username = user.Username;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Utilizadors");
+            }
         }
 
         // GET: Testes/Details/5
@@ -123,5 +136,20 @@ namespace AprendeComMinions.Controllers
             }
             base.Dispose(disposing);
         }
+
+        /** TESTE NÃO TEM URL DE IMAGEM NEM GRAU DE DIFICULDADE???
+        public List<string> ImagemTeste(Utilizador u)
+        {
+            List<Teste> testes = new List<Teste>();
+            List<string> urls = new List<string>();
+            int grau = u.GrauDif;
+            testes = db.Testes.Where(x => x.GrauDif == grau).ToList();
+            foreach (Teste a in testes)
+            {
+                urls.Add(a.URLImagem);
+            }
+            return urls;
+        }
+         **/
     }
 }

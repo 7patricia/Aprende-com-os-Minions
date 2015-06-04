@@ -1,83 +1,92 @@
 ﻿@model AprendeComMinions.Models.Utilizador
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Estatísticas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+	<!-- /section:basics/navbar.layout -->
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+    </script>
 
-<div>
-    <h4>Utilizador</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Username)
-        </dt>
+    <!-- #section:basics/sidebar -->
+    <div id="sidebar" class="sidebar                  responsive">
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+        </script>
 
-        <dd>
-            @Html.DisplayFor(model => model.Username)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Password)
-        </dd>
+        <ul class="nav nav-list">
+            <li class="">
+                <a href="@Url.Action("Index","Home")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Hello-icon.png">
+                    <span class="menu-text"> Início </span>
+                </a>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Administrador)
-        </dt>
+                <b class="arrow"></b>
+            </li>
 
-        <dd>
-            @Html.DisplayFor(model => model.Administrador)
-        </dd>
+            <li class="">
+                <a href="@Url.Action("Index", "Aula")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Amazed-icon.png">
+                    <span class="menu-text">
+                        Aulas
+                    </span>
+                </a>
+            </li>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NrRespostasCertas)
-        </dt>
+            <li class="">
+                <a href="@Url.Action("Index", "Exercicios")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Reading-icon.png">
+                    <span class="menu-text"> Vamos praticar? </span>
+                </a>
+            </li>
 
-        <dd>
-            @Html.DisplayFor(model => model.NrRespostasCertas)
-        </dd>
+            <li class="active">
+                <a href="@Url.Action("Index", "Testes")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shout-icon.png">
+                    <span class="menu-text"> Pronto para ser posto à prova? </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("Index", "SessaoEstudoes")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/32/Minion-Bananas-icon.png">
+                    <span class="menu-text"> Sessões de Estudo </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("Details", "Utilizadors")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shy-icon.png">
+                    <span class="menu-text"> Vê Como Te Tens Saído! </span>
+                </a>
+            </li>
+        </ul><!-- /.nav-list -->
+        <img style="margin-top: 150px; margin-left:50px;" src="http://2.bp.blogspot.com/-gVOF0XqBwPU/UxhRHBYmKeI/AAAAAAAAEms/cCSgALhtdmo/s1600/minions+(1).png" width="180" hegth="180">
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NrRespostasErradas)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NrRespostasErradas)
-        </dd>
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    <center>Estatísticas</center>
+                </h1>
+            </div>
+            <script type="text/javascript">
+                try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+            </script>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NrTestesRealizados)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NrTestesRealizados)
-        </dd>
+            <!-- PAGE CONTENT BEGINS -->
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NrSessoesEstudo)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NrSessoesEstudo)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.GrauDif)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.GrauDif)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UtilizadorID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+           
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.page-content -->
+    </div>
+</div><!-- /.main-content -->

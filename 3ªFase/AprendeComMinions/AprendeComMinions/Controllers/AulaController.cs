@@ -22,14 +22,17 @@ namespace AprendeComMinions.Controllers
         public ActionResult Index()
         {
             var email = User.Identity.GetUserName();
-            
-            if (email != "") { 
+
+            if (email != "") {
                 Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
-                
-                return RedirectToAction("Index", "Home");
+                @ViewBag.username = user.Username;
+                @ViewBag.aulas = ImagemAula(user);
+                return View();
             } else {
-                return View(db.Aulas.ToList());
-            } 
+                return RedirectToAction("Login", "Utilizadors");
+            }
+
+           
         }
 
         // GET: Aula/Details/5
@@ -136,7 +139,8 @@ namespace AprendeComMinions.Controllers
             base.Dispose(disposing);
         }
 
-        /*
+ 
+        
         public List<string> ImagemAula(Utilizador u) {
             List<Aula> aulas = new List<Aula>();
             List<string> urls = new List<string>();
@@ -147,7 +151,7 @@ namespace AprendeComMinions.Controllers
             }
             return urls;
         }
-
+        
         public string UrlVideo(string urlI) {
             string urlV;
             Aula a = (Aula)(db.Aulas.Where(x => x.URLImagem == urlI));
@@ -155,6 +159,8 @@ namespace AprendeComMinions.Controllers
             return urlV;
         }
 
+
+ 
         public string TituloAula(string urlI) {
             string titulo;
             Aula a = (Aula)(db.Aulas.Where(x => x.URLImagem == urlI));
@@ -163,6 +169,6 @@ namespace AprendeComMinions.Controllers
             return titulo;
         }
 
-        */
+        
     }
 }

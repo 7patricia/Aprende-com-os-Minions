@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AprendeComMinions.Models;
+using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 
 namespace AprendeComMinions.Controllers
 {
@@ -17,7 +19,18 @@ namespace AprendeComMinions.Controllers
         // GET: SessaoEstudoes
         public ActionResult Index()
         {
-            return View(db.SessoesEstudo.ToList());
+            var email = User.Identity.GetUserName();
+
+            if (email != "")
+            {
+                Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+                @ViewBag.username = user.Username;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Utilizadors");
+            }
         }
 
         // GET: SessaoEstudoes/Details/5
@@ -146,5 +159,7 @@ namespace AprendeComMinions.Controllers
             }
             base.Dispose(disposing);
         }
+
+        
     }
 }
