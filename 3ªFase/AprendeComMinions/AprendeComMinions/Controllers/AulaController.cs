@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AprendeComMinions.Models;
+using System.Threading.Tasks;
 
 namespace AprendeComMinions.Controllers
 {
@@ -15,9 +16,13 @@ namespace AprendeComMinions.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Aula
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
+            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            user.EMAIL
             return View(db.Aulas.ToList());
+
+            funcao()
         }
 
         // GET: Aula/Details/5
