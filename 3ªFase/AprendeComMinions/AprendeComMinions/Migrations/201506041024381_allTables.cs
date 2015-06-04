@@ -3,18 +3,10 @@ namespace AprendeComMinions.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddAllTablesofMinions : DbMigration
+    public partial class allTables : DbMigration
     {
         public override void Up()
         {
-            DropForeignKey("dbo.SessaoEstudoAulas", "SessaoEstudo_SessaoEstudoID", "dbo.SessoesEstudo");
-            DropForeignKey("dbo.SessaoEstudoAulas", "Aula_AulaID", "dbo.Aulas");
-            DropForeignKey("dbo.TesteSessaoEstudoes", "Teste_TesteID", "dbo.Testes");
-            DropForeignKey("dbo.TesteSessaoEstudoes", "SessaoEstudo_SessaoEstudoID", "dbo.SessoesEstudo");
-            DropIndex("dbo.SessaoEstudoAulas", new[] { "SessaoEstudo_SessaoEstudoID" });
-            DropIndex("dbo.SessaoEstudoAulas", new[] { "Aula_AulaID" });
-            DropIndex("dbo.TesteSessaoEstudoes", new[] { "Teste_TesteID" });
-            DropIndex("dbo.TesteSessaoEstudoes", new[] { "SessaoEstudo_SessaoEstudoID" });
             CreateTable(
                 "dbo.Exercicios",
                 c => new
@@ -32,6 +24,21 @@ namespace AprendeComMinions.Migrations
                 .Index(t => t.SessaoEstudo_SessaoEstudoID1);
             
             CreateTable(
+                "dbo.Perguntas",
+                c => new
+                    {
+                        PerguntaID = c.Int(nullable: false, identity: true),
+                        Descricao = c.String(),
+                        Teste_TesteID = c.Int(),
+                        Exercicio_ExercicioID = c.Int(),
+                    })
+                .PrimaryKey(t => t.PerguntaID)
+                .ForeignKey("dbo.Testes", t => t.Teste_TesteID)
+                .ForeignKey("dbo.Exercicios", t => t.Exercicio_ExercicioID)
+                .Index(t => t.Teste_TesteID)
+                .Index(t => t.Exercicio_ExercicioID);
+            
+            CreateTable(
                 "dbo.Respostas",
                 c => new
                     {
@@ -47,6 +54,22 @@ namespace AprendeComMinions.Migrations
                 .Index(t => t.RespostaCerta_RespostaID);
             
             CreateTable(
+                "dbo.Utilizadors",
+                c => new
+                    {
+                        UtilizadorID = c.Int(nullable: false, identity: true),
+                        Username = c.String(),
+                        Password = c.String(),
+                        Administrador = c.Boolean(nullable: false),
+                        NrRespostasCertas = c.Int(nullable: false),
+                        NrRespostasErradas = c.Int(nullable: false),
+                        NrTestesRealizados = c.Int(nullable: false),
+                        NrSessoesEstudo = c.Int(nullable: false),
+                        GrauDif = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.UtilizadorID);
+            
+            CreateTable(
                 "dbo.Duvidas",
                 c => new
                     {
@@ -56,71 +79,66 @@ namespace AprendeComMinions.Migrations
                 .PrimaryKey(t => t.DuvidaID);
             
             CreateTable(
-                "dbo.Utilizadors",
+                "dbo.UtilizadorAulas",
                 c => new
                     {
-                        UtilizadorID = c.Int(nullable: false, identity: true),
-                        Username = c.String(),
-                        Password = c.String(),
-                        NrRespostasCertas = c.Int(nullable: false),
-                        NrRespostasErradas = c.Int(nullable: false),
-                        NrTestesRealizados = c.Int(nullable: false),
-                        NrSessoesEstudo = c.Int(nullable: false),
-                        GrauDif = c.Int(nullable: false),
+                        Utilizador_UtilizadorID = c.Int(nullable: false),
+                        Aula_AulaID = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.UtilizadorID);
+                .PrimaryKey(t => new { t.Utilizador_UtilizadorID, t.Aula_AulaID })
+                .ForeignKey("dbo.Utilizadors", t => t.Utilizador_UtilizadorID, cascadeDelete: true)
+                .ForeignKey("dbo.Aulas", t => t.Aula_AulaID, cascadeDelete: true)
+                .Index(t => t.Utilizador_UtilizadorID)
+                .Index(t => t.Aula_AulaID);
             
-            AddColumn("dbo.Aulas", "SessaoEstudo_SessaoEstudoID", c => c.Int());
+            CreateTable(
+                "dbo.UtilizadorExercicios",
+                c => new
+                    {
+                        Utilizador_UtilizadorID = c.Int(nullable: false),
+                        Exercicio_ExercicioID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Utilizador_UtilizadorID, t.Exercicio_ExercicioID })
+                .ForeignKey("dbo.Utilizadors", t => t.Utilizador_UtilizadorID, cascadeDelete: true)
+                .ForeignKey("dbo.Exercicios", t => t.Exercicio_ExercicioID, cascadeDelete: true)
+                .Index(t => t.Utilizador_UtilizadorID)
+                .Index(t => t.Exercicio_ExercicioID);
+            
+            CreateTable(
+                "dbo.UtilizadorTestes",
+                c => new
+                    {
+                        Utilizador_UtilizadorID = c.Int(nullable: false),
+                        Teste_TesteID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Utilizador_UtilizadorID, t.Teste_TesteID })
+                .ForeignKey("dbo.Utilizadors", t => t.Utilizador_UtilizadorID, cascadeDelete: true)
+                .ForeignKey("dbo.Testes", t => t.Teste_TesteID, cascadeDelete: true)
+                .Index(t => t.Utilizador_UtilizadorID)
+                .Index(t => t.Teste_TesteID);
+            
             AddColumn("dbo.Aulas", "SessaoEstudo_SessaoEstudoID1", c => c.Int());
             AddColumn("dbo.SessoesEstudo", "Teste_TesteID", c => c.Int());
             AddColumn("dbo.SessoesEstudo", "Exercicio_ExercicioID", c => c.Int());
             AddColumn("dbo.SessoesEstudo", "Aula_AulaID", c => c.Int());
             AddColumn("dbo.Testes", "SessaoEstudo_SessaoEstudoID", c => c.Int());
             AddColumn("dbo.Testes", "SessaoEstudo_SessaoEstudoID1", c => c.Int());
-            AddColumn("dbo.Perguntas", "Teste_TesteID", c => c.Int());
-            AddColumn("dbo.Perguntas", "Exercicio_ExercicioID", c => c.Int());
-            CreateIndex("dbo.Aulas", "SessaoEstudo_SessaoEstudoID");
             CreateIndex("dbo.Aulas", "SessaoEstudo_SessaoEstudoID1");
             CreateIndex("dbo.SessoesEstudo", "Teste_TesteID");
             CreateIndex("dbo.SessoesEstudo", "Exercicio_ExercicioID");
             CreateIndex("dbo.SessoesEstudo", "Aula_AulaID");
-            CreateIndex("dbo.Perguntas", "Teste_TesteID");
-            CreateIndex("dbo.Perguntas", "Exercicio_ExercicioID");
             CreateIndex("dbo.Testes", "SessaoEstudo_SessaoEstudoID");
             CreateIndex("dbo.Testes", "SessaoEstudo_SessaoEstudoID1");
-            AddForeignKey("dbo.Aulas", "SessaoEstudo_SessaoEstudoID", "dbo.SessoesEstudo", "SessaoEstudoID");
             AddForeignKey("dbo.Aulas", "SessaoEstudo_SessaoEstudoID1", "dbo.SessoesEstudo", "SessaoEstudoID");
-            AddForeignKey("dbo.Perguntas", "Teste_TesteID", "dbo.Testes", "TesteID");
             AddForeignKey("dbo.SessoesEstudo", "Teste_TesteID", "dbo.Testes", "TesteID");
-            AddForeignKey("dbo.Perguntas", "Exercicio_ExercicioID", "dbo.Exercicios", "ExercicioID");
             AddForeignKey("dbo.SessoesEstudo", "Exercicio_ExercicioID", "dbo.Exercicios", "ExercicioID");
             AddForeignKey("dbo.Testes", "SessaoEstudo_SessaoEstudoID", "dbo.SessoesEstudo", "SessaoEstudoID");
             AddForeignKey("dbo.Testes", "SessaoEstudo_SessaoEstudoID1", "dbo.SessoesEstudo", "SessaoEstudoID");
             AddForeignKey("dbo.SessoesEstudo", "Aula_AulaID", "dbo.Aulas", "AulaID");
-            DropTable("dbo.SessaoEstudoAulas");
-            DropTable("dbo.TesteSessaoEstudoes");
         }
         
         public override void Down()
         {
-            CreateTable(
-                "dbo.TesteSessaoEstudoes",
-                c => new
-                    {
-                        Teste_TesteID = c.Int(nullable: false),
-                        SessaoEstudo_SessaoEstudoID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.Teste_TesteID, t.SessaoEstudo_SessaoEstudoID });
-            
-            CreateTable(
-                "dbo.SessaoEstudoAulas",
-                c => new
-                    {
-                        SessaoEstudo_SessaoEstudoID = c.Int(nullable: false),
-                        Aula_AulaID = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => new { t.SessaoEstudo_SessaoEstudoID, t.Aula_AulaID });
-            
             DropForeignKey("dbo.SessoesEstudo", "Aula_AulaID", "dbo.Aulas");
             DropForeignKey("dbo.Testes", "SessaoEstudo_SessaoEstudoID1", "dbo.SessoesEstudo");
             DropForeignKey("dbo.Testes", "SessaoEstudo_SessaoEstudoID", "dbo.SessoesEstudo");
@@ -128,12 +146,23 @@ namespace AprendeComMinions.Migrations
             DropForeignKey("dbo.Exercicios", "SessaoEstudo_SessaoEstudoID", "dbo.SessoesEstudo");
             DropForeignKey("dbo.SessoesEstudo", "Exercicio_ExercicioID", "dbo.Exercicios");
             DropForeignKey("dbo.Perguntas", "Exercicio_ExercicioID", "dbo.Exercicios");
+            DropForeignKey("dbo.UtilizadorTestes", "Teste_TesteID", "dbo.Testes");
+            DropForeignKey("dbo.UtilizadorTestes", "Utilizador_UtilizadorID", "dbo.Utilizadors");
+            DropForeignKey("dbo.UtilizadorExercicios", "Exercicio_ExercicioID", "dbo.Exercicios");
+            DropForeignKey("dbo.UtilizadorExercicios", "Utilizador_UtilizadorID", "dbo.Utilizadors");
+            DropForeignKey("dbo.UtilizadorAulas", "Aula_AulaID", "dbo.Aulas");
+            DropForeignKey("dbo.UtilizadorAulas", "Utilizador_UtilizadorID", "dbo.Utilizadors");
             DropForeignKey("dbo.SessoesEstudo", "Teste_TesteID", "dbo.Testes");
             DropForeignKey("dbo.Perguntas", "Teste_TesteID", "dbo.Testes");
             DropForeignKey("dbo.Respostas", "RespostaCerta_RespostaID", "dbo.Respostas");
             DropForeignKey("dbo.Respostas", "Pergunta_PerguntaID", "dbo.Perguntas");
             DropForeignKey("dbo.Aulas", "SessaoEstudo_SessaoEstudoID1", "dbo.SessoesEstudo");
-            DropForeignKey("dbo.Aulas", "SessaoEstudo_SessaoEstudoID", "dbo.SessoesEstudo");
+            DropIndex("dbo.UtilizadorTestes", new[] { "Teste_TesteID" });
+            DropIndex("dbo.UtilizadorTestes", new[] { "Utilizador_UtilizadorID" });
+            DropIndex("dbo.UtilizadorExercicios", new[] { "Exercicio_ExercicioID" });
+            DropIndex("dbo.UtilizadorExercicios", new[] { "Utilizador_UtilizadorID" });
+            DropIndex("dbo.UtilizadorAulas", new[] { "Aula_AulaID" });
+            DropIndex("dbo.UtilizadorAulas", new[] { "Utilizador_UtilizadorID" });
             DropIndex("dbo.Testes", new[] { "SessaoEstudo_SessaoEstudoID1" });
             DropIndex("dbo.Testes", new[] { "SessaoEstudo_SessaoEstudoID" });
             DropIndex("dbo.Respostas", new[] { "RespostaCerta_RespostaID" });
@@ -146,28 +175,20 @@ namespace AprendeComMinions.Migrations
             DropIndex("dbo.SessoesEstudo", new[] { "Exercicio_ExercicioID" });
             DropIndex("dbo.SessoesEstudo", new[] { "Teste_TesteID" });
             DropIndex("dbo.Aulas", new[] { "SessaoEstudo_SessaoEstudoID1" });
-            DropIndex("dbo.Aulas", new[] { "SessaoEstudo_SessaoEstudoID" });
-            DropColumn("dbo.Perguntas", "Exercicio_ExercicioID");
-            DropColumn("dbo.Perguntas", "Teste_TesteID");
             DropColumn("dbo.Testes", "SessaoEstudo_SessaoEstudoID1");
             DropColumn("dbo.Testes", "SessaoEstudo_SessaoEstudoID");
             DropColumn("dbo.SessoesEstudo", "Aula_AulaID");
             DropColumn("dbo.SessoesEstudo", "Exercicio_ExercicioID");
             DropColumn("dbo.SessoesEstudo", "Teste_TesteID");
             DropColumn("dbo.Aulas", "SessaoEstudo_SessaoEstudoID1");
-            DropColumn("dbo.Aulas", "SessaoEstudo_SessaoEstudoID");
-            DropTable("dbo.Utilizadors");
+            DropTable("dbo.UtilizadorTestes");
+            DropTable("dbo.UtilizadorExercicios");
+            DropTable("dbo.UtilizadorAulas");
             DropTable("dbo.Duvidas");
+            DropTable("dbo.Utilizadors");
             DropTable("dbo.Respostas");
+            DropTable("dbo.Perguntas");
             DropTable("dbo.Exercicios");
-            CreateIndex("dbo.TesteSessaoEstudoes", "SessaoEstudo_SessaoEstudoID");
-            CreateIndex("dbo.TesteSessaoEstudoes", "Teste_TesteID");
-            CreateIndex("dbo.SessaoEstudoAulas", "Aula_AulaID");
-            CreateIndex("dbo.SessaoEstudoAulas", "SessaoEstudo_SessaoEstudoID");
-            AddForeignKey("dbo.TesteSessaoEstudoes", "SessaoEstudo_SessaoEstudoID", "dbo.SessoesEstudo", "SessaoEstudoID", cascadeDelete: true);
-            AddForeignKey("dbo.TesteSessaoEstudoes", "Teste_TesteID", "dbo.Testes", "TesteID", cascadeDelete: true);
-            AddForeignKey("dbo.SessaoEstudoAulas", "Aula_AulaID", "dbo.Aulas", "AulaID", cascadeDelete: true);
-            AddForeignKey("dbo.SessaoEstudoAulas", "SessaoEstudo_SessaoEstudoID", "dbo.SessoesEstudo", "SessaoEstudoID", cascadeDelete: true);
         }
     }
 }

@@ -11,7 +11,9 @@ namespace AprendeComMinions.Models
     {
         public int RespostaID { get; set; }
         public string Descricao { get; set; }
+        public int RespA { get; set; }
+        public int RespB { get; set; }
+        public int RespC { get; set; }
         public virtual Pergunta Pergunta { get; set; }
-        public virtual Resposta RespostaCerta { get; set; }
     }
 }
