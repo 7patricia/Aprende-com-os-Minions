@@ -1,16 +1,23 @@
-﻿using System;
+﻿using AprendeComMinions.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace AprendeComMinions.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
-            @ViewBag.username = "ABC";
+            var email = User.Identity.GetUserName();
+            Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+
+            @ViewBag.username = user;
             return View();
         }
 

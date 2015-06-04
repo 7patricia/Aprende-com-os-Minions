@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201506041320262_NaoSeiOQueFalta.Designer.cs">
       <DependentUpon>201506041320262_NaoSeiOQueFalta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506041734460_UpdatesTables.cs" />
+    <Compile Include="Migrations\201506041734460_UpdatesTables.Designer.cs">
+      <DependentUpon>201506041734460_UpdatesTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aula.cs" />
@@ -350,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506041320262_NaoSeiOQueFalta.resx">
       <DependentUpon>201506041320262_NaoSeiOQueFalta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506041734460_UpdatesTables.resx">
+      <DependentUpon>201506041734460_UpdatesTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
