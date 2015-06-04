@@ -25,10 +25,6 @@ namespace AprendeComMinions.Models
         public virtual List<Aula> Aulas { get; set; }
         public virtual List<Exercicio> Exercicios { get; set; }
 
-
-
-
-
         public int getLoggedID(int id) {
             return Convert.ToInt32(Membership.GetUser().ProviderUserKey.ToString());
         }
@@ -64,6 +60,24 @@ namespace AprendeComMinions.Models
         public string ConfirmarPassword { get; set; }
 
     }
+    public class LocalPasswordModel
+    {
+        [Required]
+        [DataType(DataType.Password)]
+        [Display(Name = "Palavra-Passe Atual")]
+        public string OldPassword { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Palavra-Passe Nova")]
+        public string NewPassword { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirme Palavra-Passe Nova")]
+        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+    }
 
     public class CreateModel
     {
@@ -73,11 +87,11 @@ namespace AprendeComMinions.Models
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Palavra-Passe")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar password")]
+        [Display(Name = "Confirmar Palavra-Passe")]
         [Compare("Password", ErrorMessage = "As password inseridas não são iguais")]
         public string ConfirmarPassword { get; set; }
 
@@ -99,7 +113,7 @@ namespace AprendeComMinions.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirmar password")]
+        [Display(Name = "Confirmar Palavra-Passe")]
         [Compare("Password", ErrorMessage = "As password inseridas não são iguais")]
         public string ConfirmarPassword { get; set; }
 

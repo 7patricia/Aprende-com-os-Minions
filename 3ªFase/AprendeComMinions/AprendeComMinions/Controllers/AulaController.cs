@@ -123,5 +123,13 @@ namespace AprendeComMinions.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        public List<string> ImagemAula(Utilizador u) {
+            List<string> urls = new List<string>();
+            int grau = u.GrauDif;
+            //urls = db.Aulas.Where(x =>x.GrauDif== grau);
+
+        }
     }
 }

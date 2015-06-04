@@ -170,6 +170,7 @@
     <Compile Include="Controllers\PerguntasController.cs" />
     <Compile Include="Controllers\SessaoEstudoesController.cs" />
     <Compile Include="Controllers\TestesController.cs" />
+    <Compile Include="Controllers\UtilizadorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -201,17 +202,13 @@
     <Compile Include="Migrations\201505291929596_AddTeste.Designer.cs">
       <DependentUpon>201505291929596_AddTeste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505292124083_UpDates.cs" />
-    <Compile Include="Migrations\201505292124083_UpDates.Designer.cs">
-      <DependentUpon>201505292124083_UpDates.cs</DependentUpon>
+    <Compile Include="Migrations\201506041024381_allTables.cs" />
+    <Compile Include="Migrations\201506041024381_allTables.Designer.cs">
+      <DependentUpon>201506041024381_allTables.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506031046080_AddAllTablesofMinions.cs" />
-    <Compile Include="Migrations\201506031046080_AddAllTablesofMinions.Designer.cs">
-      <DependentUpon>201506031046080_AddAllTablesofMinions.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506031108483_addViewPageAula.cs" />
-    <Compile Include="Migrations\201506031108483_addViewPageAula.Designer.cs">
-      <DependentUpon>201506031108483_addViewPageAula.cs</DependentUpon>
+    <Compile Include="Migrations\201506041119426_NovosAtributosUtilizadorAula.cs" />
+    <Compile Include="Migrations\201506041119426_NovosAtributosUtilizadorAula.Designer.cs">
+      <DependentUpon>201506041119426_NovosAtributosUtilizadorAula.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201506041135530_viewAulas.cs" />
     <Compile Include="Migrations\201506041135530_viewAulas.Designer.cs">
@@ -311,6 +308,11 @@
     <Content Include="Views\Testes\Teste.cshtml" />
     <Content Include="Views\Exercicios\Exercicio.cshtml" />
     <Content Include="Views\SessaoEstudoes\Create.cshtml" />
+    <Content Include="Views\Utilizadors\Create.cshtml" />
+    <Content Include="Views\Utilizadors\Delete.cshtml" />
+    <Content Include="Views\Utilizadors\Details.cshtml" />
+    <Content Include="Views\Utilizadors\Edit.cshtml" />
+    <Content Include="Views\Utilizadors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -344,14 +346,11 @@
     <EmbeddedResource Include="Migrations\201505291929596_AddTeste.resx">
       <DependentUpon>201505291929596_AddTeste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505292124083_UpDates.resx">
-      <DependentUpon>201505292124083_UpDates.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506041024381_allTables.resx">
+      <DependentUpon>201506041024381_allTables.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506031046080_AddAllTablesofMinions.resx">
-      <DependentUpon>201506031046080_AddAllTablesofMinions.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506031108483_addViewPageAula.resx">
-      <DependentUpon>201506031108483_addViewPageAula.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506041119426_NovosAtributosUtilizadorAula.resx">
+      <DependentUpon>201506041119426_NovosAtributosUtilizadorAula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506041135530_viewAulas.resx">
       <DependentUpon>201506041135530_viewAulas.cs</DependentUpon>

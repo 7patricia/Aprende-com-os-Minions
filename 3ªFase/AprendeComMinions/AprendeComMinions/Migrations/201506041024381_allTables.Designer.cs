@@ -7,13 +7,13 @@ namespace AprendeComMinions.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addViewPageAula : IMigrationMetadata
+    public sealed partial class allTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addViewPageAula));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(allTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506031108483_addViewPageAula"; }
+            get { return "201506041024381_allTables"; }
         }
         
         string IMigrationMetadata.Source

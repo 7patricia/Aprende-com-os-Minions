@@ -1,0 +1,76 @@
+﻿@model IEnumerable<AprendeComMinions.Models.Utilizador>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Administrador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NrRespostasCertas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NrRespostasErradas)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NrTestesRealizados)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NrSessoesEstudo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrauDif)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Administrador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NrRespostasCertas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NrRespostasErradas)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NrTestesRealizados)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NrSessoesEstudo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GrauDif)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UtilizadorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UtilizadorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UtilizadorID })
+        </td>
+    </tr>
+}
+
+</table>

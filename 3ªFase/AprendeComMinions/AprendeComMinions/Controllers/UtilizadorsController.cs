@@ -7,114 +7,120 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AprendeComMinions.Models;
+using System.Web.Security;
 
 namespace AprendeComMinions.Controllers
 {
-    public class PerguntasController : Controller
+    public class UtilizadorsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Perguntas
+        // GET: Utilizadors
         public ActionResult Index()
         {
-            return View(db.Perguntas.ToList());
+            int id = Convert.ToInt32(Membership.GetUser().ProviderUserKey.ToString());
+            Utilizador u = db.Utilizadores.Find(id);
+            Session["User"] = u;
+            ViewBag.UtilizadorID = u.UtilizadorID;
+            ViewBag.Administrador = u.Administrador;
+            ViewBag.GrauDif = u.GrauDif;
+            return View(u);
         }
 
-        // GET: Perguntas/Details/5
+        // GET: Utilizadors/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pergunta pergunta = db.Perguntas.Find(id);
-            if (pergunta == null)
+            Utilizador utilizador = db.Utilizadores.Find(id);
+            if (utilizador == null)
             {
                 return HttpNotFound();
             }
-            return View(pergunta);
+            return View(utilizador);
         }
 
-        // GET: Perguntas/Create
+        // GET: Utilizadors/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Perguntas/Create
+        // POST: Utilizadors/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PerguntaID,Descricao")] Pergunta pergunta)
+        public ActionResult Create([Bind(Include = "UtilizadorID,Username,Password,Administrador,NrRespostasCertas,NrRespostasErradas,NrTestesRealizados,NrSessoesEstudo,GrauDif")] Utilizador utilizador)
         {
             if (ModelState.IsValid)
             {
-                db.Perguntas.Add(pergunta);
+                db.Utilizadores.Add(utilizador);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(pergunta);
+            return View(utilizador);
         }
 
-        // GET: Perguntas/Edit/5
+        // GET: Utilizadors/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pergunta pergunta = db.Perguntas.Find(id);
-            if (pergunta == null)
+            Utilizador utilizador = db.Utilizadores.Find(id);
+            if (utilizador == null)
             {
                 return HttpNotFound();
             }
-            return View(pergunta);
+            return View(utilizador);
         }
 
-        // POST: Perguntas/Edit/5
+        // POST: Utilizadors/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PerguntaID,Descricao")] Pergunta pergunta)
+        public ActionResult Edit([Bind(Include = "UtilizadorID,Username,Password,Administrador,NrRespostasCertas,NrRespostasErradas,NrTestesRealizados,NrSessoesEstudo,GrauDif")] Utilizador utilizador)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(pergunta).State = EntityState.Modified;
+                db.Entry(utilizador).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(pergunta);
+            return View(utilizador);
         }
 
-        // GET: Perguntas/Delete/5
+        // GET: Utilizadors/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Pergunta pergunta = db.Perguntas.Find(id);
-            if (pergunta == null)
+            Utilizador utilizador = db.Utilizadores.Find(id);
+            if (utilizador == null)
             {
                 return HttpNotFound();
             }
-            return View(pergunta);
+            return View(utilizador);
         }
 
-        // POST: Perguntas/Delete/5
+        // POST: Utilizadors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Pergunta pergunta = db.Perguntas.Find(id);
-            db.Perguntas.Remove(pergunta);
+            Utilizador utilizador = db.Utilizadores.Find(id);
+            db.Utilizadores.Remove(utilizador);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
 
         protected override void Dispose(bool disposing)
         {
