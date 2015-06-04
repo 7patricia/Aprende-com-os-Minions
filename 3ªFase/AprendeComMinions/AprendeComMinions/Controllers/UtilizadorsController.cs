@@ -9,7 +9,6 @@ using System.Web;
 using System.Web.Mvc;
 using AprendeComMinions.Models;
 using System.Web.Security;
-using System.Threading.Tasks;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.AspNet.Identity;

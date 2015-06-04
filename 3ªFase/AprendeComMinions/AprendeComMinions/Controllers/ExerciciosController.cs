@@ -138,6 +138,39 @@ namespace AprendeComMinions.Controllers
 
             return urls;
         }
+        
+        public List<string> ImagemExercicioG(Utilizador u, string t) {
+            List<string> urls = new List<string>();
+            IQueryable<Exercicio> exs = db.Exercicios.Where(x => x.GrauDif == u.GrauDif);
+            foreach (Exercicio e in exs) {
+                if (e.Tema.Equals(t)) {
+                    urls.Add(e.URLImagem);
+                }
+            }
+            return urls;
+        }
+
+        public List<string> URLPerguntas(Exercicio exs) {
+            List<string> urls = new List<string>();
+            List<Pergunta> perguntas = exs.Perguntas.ToList();
+            foreach(Pergunta p in perguntas) {
+                urls.Add(p.URLImagem);
+                  }
+            return urls;
+        }
+
+        public List<string> RespPergunta(Pergunta p)
+        {
+            List<string> respString = new List<string>();
+            ICollection<Resposta> resp = p.Respostas;
+            foreach (Resposta r in resp)
+            {
+                respString.Add(r.Descricao);
+            }
+            return respString;
+        }
+        
+        //public int CotacaoEx(List<Pergunta> p, List<string> resp) { }
 
 
     }

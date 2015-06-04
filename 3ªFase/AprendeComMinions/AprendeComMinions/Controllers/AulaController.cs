@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using AprendeComMinions.Models;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+
+
 
 namespace AprendeComMinions.Controllers
 {
@@ -16,13 +19,16 @@ namespace AprendeComMinions.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Aula
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            user.EMAIL
-            return View(db.Aulas.ToList());
-
-            funcao()
+            var email = User.Identity.GetUserName();
+            Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+                
+            if (user == null) {
+                return RedirectToAction("Index", "Home");
+            } else {
+                return View(db.Aulas.ToList());
+            } 
         }
 
         // GET: Aula/Details/5
@@ -129,7 +135,7 @@ namespace AprendeComMinions.Controllers
             base.Dispose(disposing);
         }
 
-
+        /*
         public List<string> ImagemAula(Utilizador u) {
             List<Aula> aulas = new List<Aula>();
             List<string> urls = new List<string>();
@@ -156,6 +162,6 @@ namespace AprendeComMinions.Controllers
             return titulo;
         }
 
-
+        */
     }
 }

@@ -16,6 +16,7 @@ namespace AprendeComMinions.Models
         public String Password { get; set; }
         public int UtilLigado { get; set; }
         public bool Administrador { get; set; }
+        public int NrPerguntasResp{ get; set; }
         public int NrRespostasCertas { get; set; }
         public int NrRespostasErradas { get; set; }
         public int NrTestesRealizados { get; set; }
