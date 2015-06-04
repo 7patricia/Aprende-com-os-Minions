@@ -12,7 +12,8 @@ namespace AprendeComMinions.Models
         public string Tema { get; set; }
         public int GrauDif { get; set; }
         public string Titulo { get; set; }
-        public string URL { get; set; }
+        public string URLImagem { get; set; }
+        public string URLVideo { get; set; }
         public virtual ICollection<SessaoEstudo> SessaoEstudos { get; set; }
         public virtual ICollection<Utilizador> Uttilizadores { get; set; }
         

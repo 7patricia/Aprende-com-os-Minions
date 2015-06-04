@@ -126,10 +126,31 @@ namespace AprendeComMinions.Controllers
 
 
         public List<string> ImagemAula(Utilizador u) {
+            List<Aula> aulas = new List<Aula>();
             List<string> urls = new List<string>();
             int grau = u.GrauDif;
-            //urls = db.Aulas.Where(x =>x.GrauDif== grau);
-
+            aulas = db.Aulas.Where(x =>x.GrauDif== grau).ToList();
+            foreach (Aula a in aulas) {
+                urls.Add(a.URLImagem);
+            }
+            return urls;
         }
+
+        public string UrlVideo(string urlI) {
+            string urlV;
+            Aula a = (Aula)(db.Aulas.Where(x => x.URLImagem == urlI));
+            urlV = a.URLVideo;
+            return urlV;
+        }
+
+        public string TituloAula(string urlI) {
+            string titulo;
+            Aula a = (Aula)(db.Aulas.Where(x => x.URLImagem == urlI));
+            titulo = a.Titulo;
+
+            return titulo;
+        }
+
+
     }
 }
