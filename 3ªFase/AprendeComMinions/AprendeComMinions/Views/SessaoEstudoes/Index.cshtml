@@ -79,55 +79,17 @@
 
                 <div>
                     <ul class="ace-thumbnails clearfix">
-                        <li>
-                            <a class="cboxElement" href="@Url.Action("Sessao","SessaoEstudoes")" title="Photo Title" data-rel="colorbox">
-                                <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-                                <div class="text">
-                                    <div class="inner">Sample Caption on Hover</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-                                <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-                                <div class="text">
-                                    <div class="inner">Sample Caption on Hover</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-                                <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-                                <div class="text">
-                                    <div class="inner">Sample Caption on Hover</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-                                <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-                                <div class="text">
-                                    <div class="inner">Sample Caption on Hover</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-                                <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-                                <div class="text">
-                                    <div class="inner">Sample Caption on Hover</div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="cboxElement" href="sessao.html" title="Photo Title" data-rel="colorbox">
-                                <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
-                                <div class="text">
-                                    <div class="inner">Sample Caption on Hover</div>
-                                </div>
-                            </a>
-                        </li>
-
+                        @for (int i = 0; i < 6; i++)
+                        {
+                            <li>
+                                <a class="cboxElement" href="@Url.Action("Sessao", "SessaoEstudoes")" data-rel="colorbox">
+                                    <img alt="150x150" src="http://upload.wikimedia.org/wikipedia/pt/d/d6/Minions.jpg" width="150" height="150">
+                                    <div class="text">
+                                        <div class="inner">@i</div>
+                                    </div>
+                                </a>
+                            </li>
+                        }
                     </ul>
                 </div>
                 <a href="@Url.Action("Create","SessaoEstudoes")"><button style="margin-top: 280px;margin-left:880px;" class="btn btn-lg btn-primary">Criar Sessão de Estudo</button></a>

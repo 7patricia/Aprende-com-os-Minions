@@ -213,6 +213,14 @@
     <Compile Include="Migrations\201506031108483_addViewPageAula.Designer.cs">
       <DependentUpon>201506031108483_addViewPageAula.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506041135530_viewAulas.cs" />
+    <Compile Include="Migrations\201506041135530_viewAulas.Designer.cs">
+      <DependentUpon>201506041135530_viewAulas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506041149230_viewsWithCycles.cs" />
+    <Compile Include="Migrations\201506041149230_viewsWithCycles.Designer.cs">
+      <DependentUpon>201506041149230_viewsWithCycles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aula.cs" />
@@ -344,6 +352,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506031108483_addViewPageAula.resx">
       <DependentUpon>201506031108483_addViewPageAula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506041135530_viewAulas.resx">
+      <DependentUpon>201506041135530_viewAulas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506041149230_viewsWithCycles.resx">
+      <DependentUpon>201506041149230_viewsWithCycles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
