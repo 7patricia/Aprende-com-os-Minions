@@ -210,13 +210,9 @@
     <Compile Include="Migrations\201506041119426_NovosAtributosUtilizadorAula.Designer.cs">
       <DependentUpon>201506041119426_NovosAtributosUtilizadorAula.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506041135530_viewAulas.cs" />
-    <Compile Include="Migrations\201506041135530_viewAulas.Designer.cs">
-      <DependentUpon>201506041135530_viewAulas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506041149230_viewsWithCycles.cs" />
-    <Compile Include="Migrations\201506041149230_viewsWithCycles.Designer.cs">
-      <DependentUpon>201506041149230_viewsWithCycles.cs</DependentUpon>
+    <Compile Include="Migrations\201506041320262_NaoSeiOQueFalta.cs" />
+    <Compile Include="Migrations\201506041320262_NaoSeiOQueFalta.Designer.cs">
+      <DependentUpon>201506041320262_NaoSeiOQueFalta.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -275,7 +271,7 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Utilizadors\Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -352,11 +348,8 @@
     <EmbeddedResource Include="Migrations\201506041119426_NovosAtributosUtilizadorAula.resx">
       <DependentUpon>201506041119426_NovosAtributosUtilizadorAula.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506041135530_viewAulas.resx">
-      <DependentUpon>201506041135530_viewAulas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506041149230_viewsWithCycles.resx">
-      <DependentUpon>201506041149230_viewsWithCycles.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506041320262_NaoSeiOQueFalta.resx">
+      <DependentUpon>201506041320262_NaoSeiOQueFalta.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

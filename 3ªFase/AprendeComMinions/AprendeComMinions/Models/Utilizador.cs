@@ -14,6 +14,7 @@ namespace AprendeComMinions.Models
         public int UtilizadorID { get; set; }
         public String Username { get; set; }
         public String Password { get; set; }
+        public int UtilLigado { get; set; }
         public bool Administrador { get; set; }
         public int NrRespostasCertas { get; set; }
         public int NrRespostasErradas { get; set; }
@@ -46,7 +47,7 @@ namespace AprendeComMinions.Models
 
     public class RegistarModel { 
         [Required]
-        [Display(Name= "Nome do Utilizador")]
+        [Display(Name= "Email do Utilizador")]
         public string Username { get; set; }
 
         [Required]

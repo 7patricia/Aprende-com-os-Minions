@@ -125,5 +125,20 @@ namespace AprendeComMinions.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+        public List<string> UrlExercicio(Utilizador u)
+        {
+            List<string> urls = new List<string>();
+            IQueryable<Exercicio> exs = db.Exercicios.Where(x => x.GrauDif == u.GrauDif);
+            foreach (Exercicio e in exs)
+            {
+                urls.Add(e.URLImagem);
+            }
+
+            return urls;
+        }
+
+
     }
 }
