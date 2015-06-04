@@ -16,13 +16,13 @@ namespace AprendeComMinions.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Aula
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
-            user.EMAIL
+            //var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+            //user.EMAIL
             return View(db.Aulas.ToList());
 
-            funcao()
+            //funcao()
         }
 
         // GET: Aula/Details/5
