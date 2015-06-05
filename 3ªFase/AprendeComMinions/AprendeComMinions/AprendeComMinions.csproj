@@ -218,6 +218,18 @@
     <Compile Include="Migrations\201506041734460_UpdatesTables.Designer.cs">
       <DependentUpon>201506041734460_UpdatesTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506051027096_ADDAtribTeste.cs" />
+    <Compile Include="Migrations\201506051027096_ADDAtribTeste.Designer.cs">
+      <DependentUpon>201506051027096_ADDAtribTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506051029294_ADDAtribUtilizador.cs" />
+    <Compile Include="Migrations\201506051029294_ADDAtribUtilizador.Designer.cs">
+      <DependentUpon>201506051029294_ADDAtribUtilizador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506051032547_ADDAtribExercicioDuvida.cs" />
+    <Compile Include="Migrations\201506051032547_ADDAtribExercicioDuvida.Designer.cs">
+      <DependentUpon>201506051032547_ADDAtribExercicioDuvida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aula.cs" />
@@ -357,6 +369,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506041734460_UpdatesTables.resx">
       <DependentUpon>201506041734460_UpdatesTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506051027096_ADDAtribTeste.resx">
+      <DependentUpon>201506051027096_ADDAtribTeste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506051029294_ADDAtribUtilizador.resx">
+      <DependentUpon>201506051029294_ADDAtribUtilizador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506051032547_ADDAtribExercicioDuvida.resx">
+      <DependentUpon>201506051032547_ADDAtribExercicioDuvida.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

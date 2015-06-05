@@ -12,6 +12,8 @@ namespace AprendeComMinions.Models
         public DateTime DataRealizacao { get; set; }
         public float Classificacao { get; set; }
         public string Tema { get; set; }
+        public int GrauDif { get; set; }
+        public string URL { get; set; }
 
         public virtual ICollection<SessaoEstudo> SessaoEstudos { get; set; }
         public virtual ICollection<Utilizador> Utilizadores { get; set; } 

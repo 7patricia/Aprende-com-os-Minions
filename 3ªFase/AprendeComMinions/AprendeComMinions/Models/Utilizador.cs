@@ -23,10 +23,10 @@ namespace AprendeComMinions.Models
         public int NrSessoesEstudo { get; set; }
         public int GrauDif { get; set; }
         public List<String> TemasPreferidos { get; set; }
-        public virtual List<Teste> Testes { get; set;}
-        public virtual List<Aula> Aulas { get; set; }
-        public virtual List<Exercicio> Exercicios { get; set; }
-
+        public virtual ICollection<Teste> Testes { get; set; }
+        public virtual ICollection<Aula> Aulas { get; set; }
+        public virtual ICollection<Exercicio> Exercicios { get; set; }
+        public virtual ICollection<SessaoEstudo> SessaoEstudo { get; set; }
         public int getLoggedID(int id) {
             return Convert.ToInt32(Membership.GetUser().ProviderUserKey.ToString());
         }

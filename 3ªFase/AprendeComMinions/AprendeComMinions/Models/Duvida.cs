@@ -9,5 +9,6 @@ namespace AprendeComMinions.Models
     {
         public int DuvidaID { get; set; }
         public string Descricao { get; set; }
+        public virtual Exercicio Exercicio { get; set; }
     }
 }
