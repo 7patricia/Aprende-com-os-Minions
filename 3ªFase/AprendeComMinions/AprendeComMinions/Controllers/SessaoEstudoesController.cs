@@ -63,35 +63,9 @@ namespace AprendeComMinions.Controllers
         {
             if (ModelState.IsValid)
             {
-                string tema = (String)sessaoEstudo.Tema;
-                IEnumerable<Aula> aulasSessao = db.Aulas.Where(x => x.Tema == tema).ToList();
-                sessaoEstudo.Aulas = new List<Aula>();
-                foreach (Aula a in aulasSessao)
-                {
-                    sessaoEstudo.Aulas.Add(a);
-                }
-
-
-                IEnumerable<Exercicio> exSessao = db.Exercicios.Where(x => x.Tema == tema).ToList();
-                sessaoEstudo.Exercicios = new List<Exercicio>();
-                foreach (Exercicio e in exSessao)
-                {
-                    sessaoEstudo.Exercicios.Add(e);
-                }
-
-                IEnumerable<Teste> testSessao = db.Testes.Where(x => x.Tema == tema).ToList();
-                sessaoEstudo.Testes = new List<Teste>();
-                foreach (Teste t in testSessao)
-                {
-                    sessaoEstudo.Testes.Add(t);
-                }
-
-
                 db.SessoesEstudo.Add(sessaoEstudo);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-
-
             }
             return View(sessaoEstudo);
         }
@@ -161,6 +135,51 @@ namespace AprendeComMinions.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public List<DateTime> DatasSessoes(Utilizador u) { 
+            List<DateTime> datas= new List<DateTime> ();
+            List<SessaoEstudo> sessoes = db.SessoesEstudo.Where(x => x.Utilizador.Username.Equals(u.Username)).ToList();
+            foreach (SessaoEstudo s in sessoes) {
+                datas.Add(s.Data);
+            }
+            return datas;
+        }
+
+        public void CriaSessao(Utilizador u, string tem) {
+            SessaoEstudo sessao = new SessaoEstudo();
+            //aulas por por tema e grau
+            List<Aula> aulasTema = db.Aulas.Where(x => x.Tema == tem).ToList();
+            List<Aula> aulasGrau = new List<Aula>();
+            foreach (Aula a in aulasTema) {
+                if (a.GrauDif == u.GrauDif)  aulasGrau.Add(a);
+                }
+            sessao.Aulas = aulasGrau;
+
+            //exercicios por tema e grau
+            List<Exercicio> exTema = db.Exercicios.Where(x => x.Tema == tem).ToList();
+            List<Exercicio> exGrau = new List<Exercicio>();
+            foreach (Exercicio e in exTema)
+            {
+                if (e.GrauDif == u.GrauDif) exGrau.Add(e);
+            }
+            sessao.Exercicios = exGrau;
+
+            List<Teste> testeTema = db.Testes.Where(x => x.Tema == tem).ToList();
+            List<Teste> testeGrau = new List<Teste>();
+            foreach (Teste t in testeTema)
+            {
+                if (t.GrauDif == u.GrauDif) testeGrau.Add(t);
+            }
+            sessao.Testes = testeGrau;
+            sessao.Tema = tem;
+            sessao.Utilizador = u;
+          //falta a data
+            u.NrSessoesEstudo++;
+            u.SessaoEstudo.Add(sessao);
+            
+
+        }
+
 
 
     }
