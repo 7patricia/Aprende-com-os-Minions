@@ -16,6 +16,6 @@ namespace AprendeComMinions.Models
         public virtual Teste Teste { get; set; }
         public string RespCerta { get; set; }
         public virtual ICollection<Resposta> Respostas { get; set; }
+        public virtual ICollection<Teste> Testes { get; set; }
     }
-
 }

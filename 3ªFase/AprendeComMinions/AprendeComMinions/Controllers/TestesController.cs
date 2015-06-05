@@ -137,19 +137,77 @@ namespace AprendeComMinions.Controllers
             base.Dispose(disposing);
         }
 
-        /** TESTE NÃO TEM URL DE IMAGEM NEM GRAU DE DIFICULDADE???
+
         public List<string> ImagemTeste(Utilizador u)
         {
             List<Teste> testes = new List<Teste>();
             List<string> urls = new List<string>();
             int grau = u.GrauDif;
             testes = db.Testes.Where(x => x.GrauDif == grau).ToList();
-            foreach (Teste a in testes)
+            foreach (Teste t in testes)
             {
-                urls.Add(a.URLImagem);
+                urls.Add(t.URL);
             }
             return urls;
         }
-         **/
+
+        public List<string> ImagemTesteG(Utilizador u, string t)
+        {
+            List<string> urls = new List<string>();
+            IQueryable<Teste> testes = db.Testes.Where(x => x.GrauDif == u.GrauDif);
+            foreach (Teste tst in testes)
+            {
+                if (tst.Tema.Equals(t))
+                {
+                    urls.Add(tst.URL);
+                }
+            }
+            return urls;
+        }
+
+        public List<string> URLPerguntas(Teste t)
+        {
+            List<string> urls = new List<string>();
+            List<Pergunta> perguntas = t.Perguntas.ToList();
+            foreach (Pergunta p in perguntas)
+            {
+                urls.Add(p.URLImagem);
+            }
+            return urls;
+        }
+
+        public List<string> RespPergunta(Pergunta p)
+        {
+            List<string> respString = new List<string>();
+            ICollection<Resposta> resp = p.Respostas;
+            foreach (Resposta r in resp)
+            {
+                respString.Add(r.Descricao);
+            }
+            return respString;
+        }
+
+        public int CotacaoTeste(Utilizador u, List<Pergunta> prgs, List<string> resp)
+        {
+            int cotacao = 0; int i = 0;
+            u.NrPerguntasResp += prgs.Count;
+            u.NrTestesRealizados++;
+            foreach (Pergunta p in prgs)
+            {
+                if (p.RespCerta.Equals(resp.ElementAt(i)))
+                {
+                    cotacao += 5;
+                    u.NrRespostasCertas++;
+                    i++;
+                }
+                else
+                {
+                    u.NrRespostasErradas++;
+                    i++;
+                }
+            }
+            return cotacao;
+        }
+
     }
 }

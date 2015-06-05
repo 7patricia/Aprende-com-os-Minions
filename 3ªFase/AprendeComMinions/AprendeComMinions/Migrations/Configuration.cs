@@ -9,7 +9,8 @@ namespace AprendeComMinions.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(AprendeComMinions.Models.ApplicationDbContext context)

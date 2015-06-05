@@ -70,17 +70,19 @@ namespace AprendeComMinions.Controllers
                 {
                     sessaoEstudo.Aulas.Add(a);
                 }
-                
 
-                IEnumerable<Exercicio> exSessao = db.Exercicios.Where(x =>x.Tema == tema).ToList();
-                sessaoEstudo.Exercicios = new List <Exercicio>();
-                foreach (Exercicio e in exSessao) {
+
+                IEnumerable<Exercicio> exSessao = db.Exercicios.Where(x => x.Tema == tema).ToList();
+                sessaoEstudo.Exercicios = new List<Exercicio>();
+                foreach (Exercicio e in exSessao)
+                {
                     sessaoEstudo.Exercicios.Add(e);
                 }
 
                 IEnumerable<Teste> testSessao = db.Testes.Where(x => x.Tema == tema).ToList();
-                sessaoEstudo.Testes = new List <Teste>();
-                foreach (Teste t in testSessao) {
+                sessaoEstudo.Testes = new List<Teste>();
+                foreach (Teste t in testSessao)
+                {
                     sessaoEstudo.Testes.Add(t);
                 }
 
@@ -160,6 +162,6 @@ namespace AprendeComMinions.Controllers
             base.Dispose(disposing);
         }
 
-        
+
     }
 }

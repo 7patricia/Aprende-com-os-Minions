@@ -184,7 +184,23 @@ namespace AprendeComMinions.Controllers
             return respString;
         }
         
-        //public int CotacaoEx(List<Pergunta> p, List<string> resp) { }
+        public int CotacaoEx(Utilizador u,List<Pergunta> prgs, List<string> resp) {
+            int cotacao = 0; int i=0;
+            u.NrPerguntasResp += prgs.Count;
+            foreach (Pergunta p in prgs) {
+                if (p.RespCerta.Equals(resp.ElementAt(i)))
+                {
+                    cotacao += 5;
+                    u.NrRespostasCertas++;
+                    i++;
+                }
+                else {
+                    u.NrRespostasErradas++;
+                    i++;
+                }
+            }
+            return cotacao;
+        }
 
 
     }
