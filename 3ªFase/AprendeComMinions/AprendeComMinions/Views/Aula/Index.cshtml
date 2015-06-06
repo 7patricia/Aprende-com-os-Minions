@@ -88,7 +88,7 @@
                 <ul class="ace-thumbnails clearfix">
                     @foreach (var url in ViewBag.aulas) { 
                     <li>
-                        <a class="cboxElement" href="@Url.Action("PageAula", "Aula")" data-rel="colorbox">
+                        <a class="cboxElement" href="@Url.Action("PageAula/@url", "Aula")" data-rel="colorbox">
                             <img alt="150x150" src="@url" width="150" height="150">
                         </a>
                     </li>

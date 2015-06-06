@@ -17,6 +17,24 @@ namespace AprendeComMinions.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Exercicios
+
+        public ActionResult Exercicio()
+        {
+            var email = User.Identity.GetUserName();
+
+            if (email != "")
+            {
+                Utilizador user = db.Utilizadores.Where(x => x.Username.Equals(email)).First();
+                @ViewBag.username = user.Username;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Utilizadors");
+            }
+
+        }
+
         public ActionResult Index()
         {
             var email = User.Identity.GetUserName();
@@ -25,7 +43,7 @@ namespace AprendeComMinions.Controllers
             {
                 Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
                 @ViewBag.username = user.Username;
-                @ViewBag.imgEx = UrlExercicio(user);
+                //@ViewBag.imgEx = UrlExercicio(user);
              
 
                 return View();
@@ -166,14 +184,15 @@ namespace AprendeComMinions.Controllers
             return urls;
         }
 
-        public List<string> URLPerguntas(String urlI) {
+       /** public List<string> URLPerguntas(String urlI) {
             List<string> urls = new List<string>();
-            IQueryable<Pergunta> perguntas = db.Exercicios.Where(x => x.URLImagem == urlI);
+            Exercicio e = (Exercicio)(db.Exercicios.Where(x => x.URLImagem == urlI));
+           ´ IQueryable<Pergunta> perguntas = db.Perguntas.Where(x => x.Exercicio_ExercicioID.Equals(e.ExercicioID));
             foreach(Pergunta p in perguntas) {
                 urls.Add(p.URLImagem);
                   }
             return urls;
-        }
+        }**/
 
         public List<string> RespPergunta(Pergunta p)
         {

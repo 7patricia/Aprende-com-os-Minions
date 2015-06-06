@@ -17,7 +17,23 @@ namespace AprendeComMinions.Controllers
     public class AulaController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        public ActionResult PageAula()
+        {
+        var email = User.Identity.GetUserName();
 
+        if (email != "")
+        {
+            Utilizador user = db.Utilizadores.Where(x => x.Username.Equals(email)).First();
+            @ViewBag.username = user.Username;
+            
+            return View();
+        }
+        else
+        {
+            return RedirectToAction("Login", "Utilizadors");
+        }
+
+        }
         // GET: Aula
         public ActionResult Index()
         {
@@ -28,6 +44,8 @@ namespace AprendeComMinions.Controllers
                 
                 @ViewBag.aulas = ImagemAula(user);
                 @ViewBag.username = user.Username;
+                String urlAulaEsc = Request["src"].ToString();
+                @ViewBag.urlVideoEsc = UrlVideo(urlAulaEsc);
                 return View();
             } else {
                 return RedirectToAction("Login", "Utilizadors");
