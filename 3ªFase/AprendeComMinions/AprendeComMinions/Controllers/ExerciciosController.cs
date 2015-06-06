@@ -26,6 +26,8 @@ namespace AprendeComMinions.Controllers
                 Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
                 @ViewBag.username = user.Username;
                 @ViewBag.imgEx = UrlExercicio(user);
+             
+
                 return View();
             }
             else
@@ -164,9 +166,9 @@ namespace AprendeComMinions.Controllers
             return urls;
         }
 
-        public List<string> URLPerguntas(Exercicio exs) {
+        public List<string> URLPerguntas(String urlI) {
             List<string> urls = new List<string>();
-            List<Pergunta> perguntas = exs.Perguntas.ToList();
+            IQueryable<Pergunta> perguntas = db.Exercicios.Where(x => x.URLImagem == urlI);
             foreach(Pergunta p in perguntas) {
                 urls.Add(p.URLImagem);
                   }

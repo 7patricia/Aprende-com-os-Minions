@@ -24,9 +24,10 @@ namespace AprendeComMinions.Controllers
             var email = User.Identity.GetUserName();
 
             if (email != "") {
-                Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
-                @ViewBag.username = user.Username;
+                Utilizador user = db.Utilizadores.Where(x => x.Username.Equals(email)).First();
+                
                 @ViewBag.aulas = ImagemAula(user);
+                @ViewBag.username = user.Username;
                 return View();
             } else {
                 return RedirectToAction("Login", "Utilizadors");
@@ -142,10 +143,10 @@ namespace AprendeComMinions.Controllers
  
         
         public List<string> ImagemAula(Utilizador u) {
-            List<Aula> aulas = new List<Aula>();
+            IQueryable<Aula> aulas;
             List<string> urls = new List<string>();
             int grau = u.GrauDif;
-            aulas = db.Aulas.Where(x =>x.GrauDif== grau).ToList();
+            aulas = db.Aulas.Where(x =>x.GrauDif== grau);
             foreach (Aula a in aulas) {
                 urls.Add(a.URLImagem);
             }
