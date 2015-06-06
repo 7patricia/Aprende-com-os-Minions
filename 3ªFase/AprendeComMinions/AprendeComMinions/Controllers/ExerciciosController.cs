@@ -168,10 +168,13 @@ namespace AprendeComMinions.Controllers
 
         public List<string> URLPerguntas(String urlI) {
             List<string> urls = new List<string>();
-            IQueryable<Pergunta> perguntas = db.Exercicios.Where(x => x.URLImagem == urlI);
-            foreach(Pergunta p in perguntas) {
-                urls.Add(p.URLImagem);
+            IQueryable<Exercicio> exs = db.Exercicios.Where(x => x.URLImagem.Equals(urlI));
+            foreach (Exercicio e in exs) { 
+                foreach(Pergunta p in e.Perguntas) {    
+                    urls.Add(p.URLImagem);
                   }
+        }
+            
             return urls;
         }
 
