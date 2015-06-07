@@ -194,7 +194,7 @@ namespace AprendeComMinions.Controllers
             return urls;
         }**/
 
-        public List<string> RespPergunta(Pergunta p)
+        /*public List<string> RespPergunta(Pergunta p)
         {
             List<string> respString = new List<string>();
             ICollection<Resposta> resp = p.Respostas;
@@ -203,7 +203,7 @@ namespace AprendeComMinions.Controllers
                 respString.Add(r.Descricao);
             }
             return respString;
-        }
+        }*/
         
         public int CotacaoEx(Utilizador u,List<Pergunta> prgs, List<string> resp) {
             int cotacao = 0; int i=0;

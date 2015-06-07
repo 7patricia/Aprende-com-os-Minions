@@ -176,16 +176,12 @@ namespace AprendeComMinions.Controllers
             return urls;
         }
 
-        public List<string> RespPergunta(Pergunta p)
-        {
-            List<string> respString = new List<string>();
-            ICollection<Resposta> resp = p.Respostas;
-            foreach (Resposta r in resp)
-            {
-                respString.Add(r.Descricao);
-            }
-            return respString;
-        }
+       // public List<string> RespPergunta(Pergunta p)
+       // {
+           // List<string> respString = new List<string>();
+          //  ICollection<string> resp = p.Resp;
+          //  respString.Add();
+       // }
 
         public int CotacaoTeste(Utilizador u, List<Pergunta> prgs, List<string> resp)
         {

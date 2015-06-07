@@ -138,6 +138,7 @@ namespace AprendeComMinions.Controllers
 
         public List<DateTime> DatasSessoes(Utilizador u) { 
             List<DateTime> datas= new List<DateTime> ();
+           // List<SessaoEstudo> sessoes1 = u.SessaoEstudo.ToList();
             List<SessaoEstudo> sessoes = db.SessoesEstudo.Where(x => x.Utilizador.Username.Equals(u.Username)).ToList();
             foreach (SessaoEstudo s in sessoes) {
                 datas.Add(s.Data);
@@ -173,14 +174,33 @@ namespace AprendeComMinions.Controllers
             sessao.Testes = testeGrau;
             sessao.Tema = tem;
             sessao.Utilizador = u;
-          //falta a data
+            sessao.AulasVistas= new List<Aula> ();;
+            sessao.ExerciciosResolvidos= new List<Exercicio> ();;
+            sessao.TestesResolvidos = new List<Teste>();
+            //sessao.Date
             u.NrSessoesEstudo++;
             u.SessaoEstudo.Add(sessao);
-            
-
         }
 
+        public float PAulasAssistidas(SessaoEstudo se) {
+            float percentagem;
+            percentagem = se.AulasVistas.Count / se.Aulas.Count;
+            return percentagem;
+        }
 
+        public float PExerciciosResolvidos(SessaoEstudo se)
+        {
+            float percentagem;
+            percentagem = se.ExerciciosResolvidos.Count / se.Exercicios.Count;
+            return percentagem;
+        }
+
+        public float PTestesResolvidos(SessaoEstudo se)
+        {
+            float percentagem;
+            percentagem = se.TestesResolvidos.Count / se.Testes.Count;
+            return percentagem;
+        }
 
     }
 }

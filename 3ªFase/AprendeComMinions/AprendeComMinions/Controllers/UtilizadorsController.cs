@@ -109,6 +109,7 @@ namespace AprendeComMinions.Controllers
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
                     var utilizador = new Utilizador();
+                    utilizador.GrauDif = 1;
                     utilizador.Username = model.Username;
                     db.Utilizadores.Add(utilizador);
                     db.SaveChanges();
@@ -256,6 +257,21 @@ namespace AprendeComMinions.Controllers
             base.Dispose(disposing);
         }
 
+
+        public void AlteraGrauDif(Utilizador u) {
+            if (((u.NrRespostasCertas / u.NrPerguntasResp) > 0.7) && (u.GrauDif < 3)) u.GrauDif++;
+        }
+
+        public float PRespCertas(Utilizador u) {
+            float percentagem = u.NrRespostasCertas / u.NrPerguntasResp;
+            return percentagem;
+        }
+
+        public float PRespErradas(Utilizador u)
+        {
+            float percentagem = u.NrRespostasErradas / u.NrPerguntasResp;
+            return percentagem;
+        }
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
@@ -314,5 +330,6 @@ namespace AprendeComMinions.Controllers
             }
         }
         #endregion
+
     }
 }
