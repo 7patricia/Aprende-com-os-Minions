@@ -1,49 +1,108 @@
 
-TABELA  DAS AULAS
 /*Aulas-Primetro*/
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Perimetro',1,'Perimetro','https://photos-5.dropbox.com/t/2/AADH-m109c6v7aYWESb-fOuoM51-DtoOByr2_LgDpzCHmg/12/216592353/png/32x32/1/_/1/2/aula%20-%20perimetro%20-%20grau1.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/scdH2JcW58jpzNY6Ij9Hr_47IGHh_Art6Hr29cu6esw?size=1024x768&size_mode=2','https://youtu.be/_CJryeE0ZX0');
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Perimetro',2,'Perimetro','https://photos-6.dropbox.com/t/2/AAB47f3neWqXJ1NU_c5Kv3AOkSDaeazO2EUF8ldmZecgiA/12/216592353/png/32x32/1/_/1/2/aula%20-%20perimetro%20-%20grau2.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/08aBFAP5RHbeMYPlgvS-98RT2lvE5chWkKwIl13EFGs?size=1024x768&size_mode=2','https://youtu.be/Q3eBfZKBqYs');
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Perimetro',3,'Perimetro','https://photos-4.dropbox.com/t/2/AAC1F2aZ0LLl34-Ck-oUH8M0ejRoRwxyTNw56si070DZWQ/12/216592353/png/32x32/1/_/1/2/aula%20-%20perimetro%20-%20grau3.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/wxzVuyd4PxRPqrv88ioQAtez9LRJ8fNjeP4R3yxQT-E?size=1024x768&size_mode=2','https://youtu.be/5IVm-Y5EqF4');
+insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Perimetros',1,'Perimetro 1','https://flic.kr/p/tWK4pC','https://youtu.be/_CJryeE0ZX0');
+insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Perimetros',2,'Perimetro 2','https://flic.kr/p/thufQX','https://youtu.be/Q3eBfZKBqYs');
+insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Perimetros',3,'Perimetro 3','https://flic.kr/p/tWTc8P','https://youtu.be/5IVm-Y5EqF4');
 
 /*Aulas-Area*/
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Area',1,'Area','https://photos-4.dropbox.com/t/2/AAB5GkDlG5O5L0luF43bJ8J8xTQsJuWmIBOKsLfl6mEjLw/12/216592353/png/32x32/1/_/1/2/aula%20-%20area%20-%20grau1.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/OCVsDtGdz11hfpqd090jHbkol86b6oDKYWDjK7koL3s?size=1024x768&size_mode=2','https://youtu.be/EObGAJe2QOw');
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Area',2,'Area','https://photos-1.dropbox.com/t/2/AABfMiSyOu-tbB8JGtVjyeFg05vi2zPBHlwPHFrzRHZ4Bg/12/216592353/png/32x32/1/_/1/2/aula%20-%20area%20-%20grau2.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/-oIwR6yxTtwP6YVe971fQlenMyK_tJVKzf1UFIDvcN4?size=1024x768&size_mode=2','https://youtu.be/loVU24nvc5o');
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Area',3,'Area','https://photos-5.dropbox.com/t/2/AADnZbSZ5LKZ2DLddqQerOvW6yY1CLttbMcIpBzRMWbYsA/12/216592353/png/32x32/1/_/1/2/aula%20-%20area%20-%20grau3.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/iih_y95gkB3zZ19zl8WI6EkbrfUNRp4XISem-yc442w?size=1024x768&size_mode=2','https://youtu.be/pKdAuCQiIQU');
+insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Areas',1,'Area 1','https://flic.kr/p/thuh6H','https://youtu.be/EObGAJe2QOw');
+insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Areas',2,'Area 2','https://flic.kr/p/thiX7w','https://youtu.be/loVU24nvc5o');
+insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Areas',3,'Area 3','https://flic.kr/p/uevtAT','https://youtu.be/pKdAuCQiIQU');
 
 /*Aula-MedidasComprimento*/
 
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Medidas de Comprimento',1,'Medidas de Comprimento','https://photos-2.dropbox.com/t/2/AAAZeg0zPj5uNY85Cvw5HOJr3Ush1mQOo8To0e03oUjuxA/12/216592353/png/32x32/1/_/1/2/aula%20-%20transformacoes%20-%20grau1.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/mWMEwcUpPeLkWBNW7iNjLXJLEn9NITMy4aw3E3CaczY?size=1024x768&size_mode=2','https://youtu.be/0HxYMq_dx0Q');
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Medidas de Comprimento',2,'Medidas de Comprimento','https://photos-2.dropbox.com/t/2/AACHj298uG-hdEa-2S7KSbSwEc2RDcsTDVUZSjlP_7aqrw/12/216592353/png/32x32/1/_/1/2/aula%20-%20transformacoes%20-%20grau2.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/WFiAbUVfXZHEu7m_DrPKtNSvIpSIDWidTAZ5GY_DafY?size=800x600&size_mode=2','https://youtu.be/5wBpuwrxoGk');
+insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Medidas',1,'https://flic.kr/p/thiW37','https://youtu.be/0HxYMq_dx0Q');
+insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Medidas',2,'Medidas de Comprimento 2','https://flic.kr/p/uc1bjo','https://youtu.be/5wBpuwrxoGk');
 
-TABELA DAS DUVIDAS
-/* Exercicios- Perimetro*/
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Exercicios sobre Perimetros',1,'Exercicios sobre Perimetros','https://photos-6.dropbox.com/t/2/AABtHQ4tbHDG7vVFg_RghP_jy6Rh1NSksMLL-zs4MF2Bsw/12/216592353/png/32x32/1/_/1/2/Exercicio-%20Perimetro%20-%20Grau%201.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/avXgv_0L7J0THziv5pa7wyQeMO5i14NxRzykKyNx7Vw?size=800x600&size_mode=2','https://youtu.be/0uauWawzgcU');
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Exercicios sobre Perimetros',2,'Exercicios sobre Perimetros','https://photos-6.dropbox.com/t/2/AAB7zJ8ZcTrwvKxedYovXuIRRBZJOnnYSTi0eq9JdrS6Qw/12/216592353/png/32x32/1/_/1/2/Exercicio-%20Perimetro%20-%20Grau2.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/Q88uGVsgb7jh5XEhD7QymBBivaoznvK231cSyquOpqc?size=800x600&size_mode=2','https://youtu.be/Lp2mBsGN9dI');
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Exercicios sobre Perimetros',3,'Exercicios sobre Perimetros','https://photos-6.dropbox.com/t/2/AADC1cRM2GQaL1urE0x4GddXFlLucURK7-ZS5mQy15wPRg/12/216592353/png/32x32/1/_/1/2/Exercicio-%20Perimetro%20-%20Grau%203.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/JO2AQWH4GP6K4DIYUseMhzBIV1qCqHn069-TsK1xMkI?size=800x600&size_mode=2','https://youtu.be/dXbRepTkpTo');
+/*Exercicios */
+insert into Exercicios(GrauDif,Tema,URLImagem) values (1,'Perimetros','https://flic.kr/p/uc3GgU');
+insert into Exercicios(GrauDif,Tema,URLImagem) values (2,'Perimetros','https://flic.kr/p/thmuhU');
+insert into Exercicios(GrauDif,Tema,URLImagem) values (3,'Perimetros','https://flic.kr/p/thmuhU');
+insert into Exercicios(GrauDif,Tema,URLImagem) values (1,'Areas','https://flic.kr/p/uc3GgU');
+insert into Exercicios(GrauDif,Tema,URLImagem) values (2,'Areas','https://flic.kr/p/thnDDY');
+insert into Exercicios(GrauDif,Tema,URLImagem) values (3,'Areas','https://flic.kr/p/tWVGHB');
+insert into Exercicios(GrauDif,Tema,URLImagem) values (1,'Medidas','https://flic.kr/p/thwRrM');
+insert into Exercicios(GrauDif,Tema,URLImagem) values (2,'Medidas','https://flic.kr/p/tWMEJb');
 
-/* Exercicios- Area*/
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Exercicios sobre Áreas',1,'Exercicios sobre Áreas','https://photos-6.dropbox.com/t/2/AABBFg9TjWLL3VkYtwe3tEVFc8tvk2h64TdPfTpEgDfDnA/12/216592353/png/32x32/1/_/1/2/Exercicio-%20area%20-%20Grau%201.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/XiWQXSmqGPGETn0HgQ6jjnw3Y9m3WzPJ7ZHMWVd4SbY?size=800x600&size_mode=2','https://youtu.be/1d7IFhly4II');
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Exercicios sobre Áreas',2,'Exercicios sobre Áreas','https://photos-3.dropbox.com/t/2/AABTaKnDilBOPrAOdp2eY73PfXbRM8nLEw2tXatQtGJFNw/12/216592353/png/32x32/1/_/1/2/Exercicio-%20area%20-%20Grau%202.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/chg5Y_gIStHqHSJOcaC_i5FQMyPevwIuPEkSmB_AZVs?size=800x600&size_mode=2','https://youtu.be/Ade73hv-LzU');
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Exercicios sobre Áreas',3,'Exercicios sobre Áreas','https://photos-6.dropbox.com/t/2/AAB5Gsq0dTBpRqJV8PBZ1PevEpjqF-y_8pwbZTxJpXR-qw/12/216592353/png/32x32/1/_/1/2/Exercicio-%20area%20-%20Grau3.PNG/COHfo2cgASACIAMgBCAFIAYgBygBKAI/3vlu3moo3kc1DzVTFeydEyMdLZN4__lcU4_AE1Z0ELE?size=800x600&size_mode=2','https://youtu.be/_CVrt0V7J68');
+/* Dúvidas- Perimetro*/
+insert into Duvidas(Descricao,URLVideo,Exercicio) values ('Exercicio sobre Perimetros','https://youtu.be/0uauWawzgcU',1);
+insert into Duvidas(Descricao,URLVideo,Exercicio) values ('Exercicios sobre Perimetros','https://youtu.be/Lp2mBsGN9dI',2);
+insert into Duvidas(Descricao,URLVideo,Exercicio) values ('Exercicios sobre Perimetros','https://youtu.be/dXbRepTkpTo',3);
 
-//grau 1
-insert into Perguntas(Descricao, URLImagem, RespCerta) values ('Considere este triângulo com 3 lados iguais (equilátero), sendo x = 3 cm. Qual o valor do perímetro?. Descobre a opção correta e assinala a verdadeira:','https://www.flickr.com/photos/133086819@N04/18502996666/in/album-72157651792039274/','9 cm');
-insert into Perguntas(Descricao, URLImagem, RespCerta) values ('Descobre o perímetro do retângulo, sendo y = 5 cm e x = 4 cm.','https://www.flickr.com/photos/133086819@N04/18524964432/in/album-72157651792039274/','18 cm');
-insert into Perguntas(Descricao, URLImagem, RespCerta) values ('Calcule o perímetro do círculo, com raio, x = 1 cm.','https://www.flickr.com/photos/133086819@N04/17906920694/in/album-72157651792039274/','2π cm');
+/* Dúvidas- Area*/
+insert into Duvidas(Descricao,URLVideo,Exercicio_ExercicioID) values ('Exercicio sobre Áreas','https://youtu.be/1d7IFhly4II',4);
+insert into Duvidas(Descricao,URLVideo,Exercicio_ExercicioID) values ('Exercicio sobre Áreas','https://youtu.be/Ade73hv-LzU',5);
+insert into Duvidas(Descricao,URLVideo,Exercicio_ExercicioID) values ('Exercicio sobre Áreas','https://youtu.be/_CVrt0V7J68',6);
+
+/*Perguntas*/
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Considere este triângulo com 3 lados iguais (equilátero), sendo x = 3 cm. Qual o valor do perímetro?. Descobre a opção correta e assinala a verdadeira:','https://flic.kr/p/uc3GgU','9 cm',1);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Descobre o perímetro do retângulo, sendo y = 5 cm e x = 4 cm.','https://flic.kr/p/udZhwu','18 cm',1);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Calcule o perímetro do círculo, com raio, x = 1 cm.','https://flic.kr/p/thnDDY','2π cm',1);
+
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Descobre o perímetro da figura. Tem atenção, que é um triângulo isósceles, com x = 5 cm e y = 3 cm.','https://flic.kr/p/thnDSo','13 cm',2);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Descobre o perímetro, sendo x = 5 cm e y = 3 cm.','https://flic.kr/p/thmuhU','16 cm',2);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Descobre o perímetro, sendo x = 1 dm','https://flic.kr/p/thnDDY','2π dm',2);
+
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('O Sr. Barroso quer vedar uma porção de terreno para atividades das festas da vila. Quantos metros de rede tem de comprar o Sr. Barroso?','https://flic.kr/p/ue4USs','30 m',3);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('O filho do Sr. Barroso quer construir uma casa no terreno que está a branco, descobre o perímetro do terreno a cinzento.','https://flic.kr/p/ue4USs','10 m',3);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('O filho do Sr. Barroso precisava de saber o perímetro do terreno que vai ser usado para a casa, para mandar vedar por causa dos animais selvagens. Calcula o perímetro so quadrado branco.','https://flic.kr/p/ue4USs','20 m',3);
+
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Qual das figuras tem exatamente 28 m2?','https://flic.kr/p/thnEo3','A',4);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Descobre a área deste pequeno retângulo, sendo y = 5 cm e x = 3 cm.','https://flic.kr/p/udZhwu','15 cm2',4);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Descobre a área deste triângulo, sendo x = 3 cm e h = 4 cm.','https://flic.kr/p/uc3GgU','6 cm2',4);
 
 
-//grau 2
-insert into Perguntas(Descricao, URLImagem, RespCerta) values ('Descobre o perímetro da figura. Tem atenção, que é um triângulo isósceles, com x = 5 cm e y = 3 cm.','https://www.flickr.com/photos/133086819@N04/17906921414/in/album-72157651792039274/','13 cm');
-insert into Perguntas(Descricao, URLImagem, RespCerta) values ('Descobre o perímetro, sendo x = 5 cm e y = 3 cm.','https://www.flickr.com/photos/133086819@N04/17906694084/in/album-72157651792039274/','16 cm');
-insert into Perguntas(Descricao, URLImagem, RespCerta) values ('Descobre o perímetro, sendo x = 1 dm','https://www.flickr.com/photos/133086819@N04/17906920694/in/album-72157651792039274/','2π dm');
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Descobre a área do triângulo, sendo x = 2 cm e h = 1 dm.','https://flic.kr/p/uc3GgU','20 cm2',5);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Descobre a área da circunferência, com raio = 2 cm.','https://flic.kr/p/thnDDY','4π cm2',5);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Será que serás capaz de descobrir qual destas 3 figuras têm a maior área?','https://flic.kr/p/tWVGmp','B',5);
+
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('O Sr. Pinto da Costa decidiu que a relva dos campos da academia do clube estavam a precisar de ser renovados, para isso ele tem de saber exatamente a área. Será que és tu que o vais ajudar? Que valor obtiveste como resultado?','https://flic.kr/p/tWVGHB','1200 m2',6);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('A empresa do Sr. Pinto quer comprar a relva para colocar no campo. Calcula a área em dam2','https://flic.kr/p/tWVGHB','12 dam2',6);
+insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('se o Sr. Pinto não tiver verbas, e quiser mudar a relva só a um campo, qual será a sua área?','https://flic.kr/p/tWVGHB','600 m2',6);
+
+insert into Perguntas (Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Estás a ver o comprimento do carro? Descobre o comprimento em metros.','https://flic.kr/p/uey1BB','3.88 m',7);
+insert into Perguntas (Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Aqui temos uma torre bastante conhecida, será que podias ajudar o João a transformar a altura de metros para decâmetros?','https://flic.kr/p/thwRrM','32.4 dam',7);
+
+
+insert into Perguntas (Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('O prof. Manuel comprou um móvel e quer pô-lo no seu gabinete, mas para isso precisa de saber se tem espaço para o pôr. O que ele sabe é que no seu gabinete tem 10 m2 livres e o móvel tem 100 dm2. Podes ajudar a fazer a transformação da área do móvel para m2, para ajudares o professor com a sua compra? ','https://flic.kr/p/uey2Pr','A',8);
+insert into Perguntas (Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Esta é a minha casa, podias - me dizer quantos cm2 tem a minha cozinha?','https://flic.kr/p/uey2Pr','87100 cm2',8);
+insert into Perguntas (Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Queria ver se tinha espaço para pôr 20 cartazes deste filme na parede do meu quarto. Sabendo que os 20 cartazes fazem uma área de 10000 cm2, e que a parede do meu quarto tem 500 dm2. Converte as duas medidas para m2, primeiro dos cartazes depois da parede, para me ajudares no meu problema.','https://flic.kr/p/tWMEJb','1 m2 e 5 m2',8);
+
+/*Respostas*/
+
+/*Perimetros 1*/
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('9 cm','7.5 cm','10 cm','5 cm',1);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('20 cm','10 cm','18 cm','9 cm',2);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('2π cm','2 cm','3.14π cm','π cm',3);
+/*Perimetros 2 */
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('13 dm','15 cm','13 cm','13 m',4);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('16 mm','20 cm','15 dm','16 cm',5);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('2π dm','2π cm','2 dm','π cm',6);
+/*Perimetros 3*/
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('30 m','20 m','25 m','26 m',7);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('80 dm','120 dm','120 cm','10 m',8);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('11 m','110 dm','20 m','22 dm',9);
+/*Areas 1*/
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('A','B','C','D',10);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('8 cm2','16 cm2','10 cm2','15 cm2',11);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('12 cm2','9 cm2','6 cm2','16cm2',12);
+/*Areas 2*/
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('20 cm2','20 dm2','10 dm2','10 cm2',13);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('2π cm2','4π dm2','4π cm2','2 cm2',14);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('A','B','C','D',15);
+/*Areas 3*/
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('1200 m2','300 m2','600 m2','100m2',16);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('6 dam2','60 dam2','0.6 dam2','30 dam2',17);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('600 dm2','6000 cm2','600 m2','60 m2',18);
+/*Medidas 1*/
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('180 m','1800 m','180 dm','1.8 m',19);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('38.8 m','388 m','3.88 m','3.88 dm',20);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('11 m','110 dm','20 m','22 dm',21);
+/*Medidas 2*/
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('32.4 dm','324 dam','32.4 dam','3240 cm',22);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('10 m2','0.1 m2','10 m2','100 m2',23);
+insert into Respostas(RespA,RespB,RespC,RespD,Pergunta_PerguntaID)values ('8.71 cm2','871 cm2','8710 cm2','87100 cm2',24);
 
 
 
 
-
-
-
-
-
-
-insert into Perguntas(Descricao, URLImagem, RespCerta) values ('','','');
