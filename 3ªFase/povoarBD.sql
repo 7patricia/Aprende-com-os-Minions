@@ -1,4 +1,4 @@
-
+use minions;
 /*Aulas-Primetro*/
 insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Perimetros',1,'Perimetro 1','https://flic.kr/p/tWK4pC','https://youtu.be/_CJryeE0ZX0');
 insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Perimetros',2,'Perimetro 2','https://flic.kr/p/thufQX','https://youtu.be/Q3eBfZKBqYs');
@@ -11,7 +11,7 @@ insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Areas',3,'Are
 
 /*Aula-MedidasComprimento*/
 
-insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Medidas',1,'https://flic.kr/p/thiW37','https://youtu.be/0HxYMq_dx0Q');
+insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Medidas',1,'Medidas de Comprimento 1','https://flic.kr/p/thiW37','https://youtu.be/0HxYMq_dx0Q');
 insert into Aulas(Tema,GrauDif,Titulo,URLImagem,URLVideo) values ('Medidas',2,'Medidas de Comprimento 2','https://flic.kr/p/uc1bjo','https://youtu.be/5wBpuwrxoGk');
 
 /*Exercicios */
@@ -25,7 +25,7 @@ insert into Exercicios(GrauDif,Tema,URLImagem) values (1,'Medidas','https://flic
 insert into Exercicios(GrauDif,Tema,URLImagem) values (2,'Medidas','https://flic.kr/p/tWMEJb');
 
 /* Dúvidas- Perimetro*/
-insert into Duvidas(Descricao,URLVideo,Exercicio) values ('Exercicio sobre Perimetros','https://youtu.be/0uauWawzgcU',1);
+/*insert into Duvidas(Descricao,URLVideo,Exercicio) values ('Exercicio sobre Perimetros','https://youtu.be/0uauWawzgcU',1);
 insert into Duvidas(Descricao,URLVideo,Exercicio) values ('Exercicios sobre Perimetros','https://youtu.be/Lp2mBsGN9dI',2);
 insert into Duvidas(Descricao,URLVideo,Exercicio) values ('Exercicios sobre Perimetros','https://youtu.be/dXbRepTkpTo',3);
 
@@ -33,7 +33,7 @@ insert into Duvidas(Descricao,URLVideo,Exercicio) values ('Exercicios sobre Peri
 insert into Duvidas(Descricao,URLVideo,Exercicio_ExercicioID) values ('Exercicio sobre Áreas','https://youtu.be/1d7IFhly4II',4);
 insert into Duvidas(Descricao,URLVideo,Exercicio_ExercicioID) values ('Exercicio sobre Áreas','https://youtu.be/Ade73hv-LzU',5);
 insert into Duvidas(Descricao,URLVideo,Exercicio_ExercicioID) values ('Exercicio sobre Áreas','https://youtu.be/_CVrt0V7J68',6);
-
+*/
 /*Perguntas*/
 insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Considere este triângulo com 3 lados iguais (equilátero), sendo x = 3 cm. Qual o valor do perímetro?. Descobre a opção correta e assinala a verdadeira:','https://flic.kr/p/uc3GgU','9 cm',1);
 insert into Perguntas(Descricao, URLImagem, RespCerta,Exercicio_ExercicioID) values ('Descobre o perímetro do retângulo, sendo y = 5 cm e x = 4 cm.','https://flic.kr/p/udZhwu','18 cm',1);

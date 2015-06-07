@@ -202,6 +202,10 @@
     <Compile Include="Migrations\201506071817036_AlteracoesSessoesEst.Designer.cs">
       <DependentUpon>201506071817036_AlteracoesSessoesEst.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506072041544_AlteracoesDuvidas..cs" />
+    <Compile Include="Migrations\201506072041544_AlteracoesDuvidas..Designer.cs">
+      <DependentUpon>201506072041544_AlteracoesDuvidas..cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aula.cs" />
@@ -329,6 +333,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506071817036_AlteracoesSessoesEst.resx">
       <DependentUpon>201506071817036_AlteracoesSessoesEst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506072041544_AlteracoesDuvidas..resx">
+      <DependentUpon>201506072041544_AlteracoesDuvidas..cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
