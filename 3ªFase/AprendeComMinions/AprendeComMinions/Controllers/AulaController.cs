@@ -44,8 +44,8 @@ namespace AprendeComMinions.Controllers
                 
                 @ViewBag.aulas = ImagemAula(user);
                 @ViewBag.username = user.Username;
-                String urlAulaEsc = Request["src"].ToString();
-                @ViewBag.urlVideoEsc = UrlVideo(urlAulaEsc);
+               // String urlAulaEsc = Request["src"].ToString();
+               // @ViewBag.urlVideoEsc = UrlVideo(urlAulaEsc);
                 return View();
             } else {
                 return RedirectToAction("Login", "Utilizadors");

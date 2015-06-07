@@ -1,7 +1,110 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Home Page";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<!-- /section:basics/navbar.layout -->
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+    </script>
 
-<p>Use this area to provide additional information.</p>
+    <!-- #section:basics/sidebar -->
+    <div id="sidebar" class="sidebar                  responsive">
+        <script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+        </script>
+
+
+
+        <ul class="nav nav-list">
+            <li class="active">
+                <a href="@Url.Action("Index","Home")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Hello-icon.png">
+                    <span class="menu-text"> Início </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href=" @Url.Action("Index", "Aula") ">
+                    <img src=" http />/icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Amazed-icon.png">
+                <span class="menu-text">
+                    Aulas
+                </span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href=" @Url.Action("Index", "Exercicios") ">
+                    <img src=" http />/icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Reading-icon.png">
+                <span class="menu-text"> Vamos praticar? </span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href=" @Url.Action("Index", "Testes") ">
+                    <img src=" http />/icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shout-icon.png">
+                <span class="menu-text"> Pronto para ser posto à prova? </span>
+                </a>
+            </li>
+            <li class="">
+                <a href=" @Url.Action("Index", "SessaoEstudoes") ">
+                    <img src=" http />/icons.iconarchive.com/icons/designbolts/despicable-me-2/32/Minion-Bananas-icon.png">
+                <span class="menu-text"> Sessões de Estudo </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("Details", "Utilizadors")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shy-icon.png">
+                    <span class="menu-text"> Vê Como Te Tens Saído! </span>
+                </a>
+            </li>
+        </ul><!-- /.nav-list -->
+
+    </div>
+
+    <!-- /section:basics/sidebar -->
+    <div class="main-content">
+        <div class="main-content-inner">
+
+            <!-- /section:basics/content.breadcrumbs -->
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>
+                        <center>Início</center>
+                    </h1>
+                </div><!-- /.page-header -->
+                <!-- PAGE CONTENT BEGINS -->
+
+
+                <div class="boxed">
+                    Bem-vindo à aplicação Aprende Com os Minions!
+                    Com esta aplicação vais poder aprender e práticar com os Minions na área da geometria!<br />
+                    Depois de estares ligado tens várias opções das quais se destacam
+                    as aulas, os exercícios, os testes e as sessões de estudo.<br />
+                    Nas aulas és acompanhado por um vídeo que te explica como se resolvem
+                    os exercícios. Para além disso, tens sempre um exemplo de resolução
+                    para que possas ver e compreender melhor como é resolvido cada tipo
+                    de problema. No final, tens ainda um exercício que serve para teres
+                    a certeza se compreendeste a matéria.<br />
+                    Na secção de exercícios tens vários exercícios adequados aos temas
+                    que foram dados nas aulas. Testa as tuas capacidades!<br />
+                    Na área de testes são-te apresentados um conjunto de testes que têm
+                    questões para testar o teu conhecimento.<br />
+                    No separador das sessões de estudo és tu que defines o que queres aprender
+                    e de que forma. Seleciona um tema à tua escolha e desafia-te a ti mesmo.<br />
+                    Tens também uma seccção de estatísticas onde podes ver todo o teu progresso.<br />
+                    No menu do utilizador (canto superior direito) tens três possibilidades.
+                    A primeira é a de selecionar os teus temas favoritos, assim como alterares
+                    a tua palavra-passe na área de preferências. Depois podes ainda repor as
+                    tuas estatísticas. Por último, podes sair da aplicação. 
+
+                    <a href="@Url.Action("Index","Aula")"><button class="btn btn-lg btn-primary">Estou pronto!</button></a>  
+                </div>
+
+                <img style="margin-top: -130px;margin-left:50px;" width='250' heigth='250' src="http://4.bp.blogspot.com/-OYVgI7obPtE/UlNOmgaexfI/AAAAAAAAAGs/YdOqO-SmpHE/s1600/minion-transparent.png">
+
+                <!-- PAGE CONTENT ENDS -->
+            </div><!-- /.page-content -->
+        </div>
+    </div>
