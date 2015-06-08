@@ -111,7 +111,7 @@ namespace AprendeComMinions.Migrations
                     })
                 .PrimaryKey(t => t.UtilizadorID);
             
-            CreateTable(
+           /* CreateTable(
                 "dbo.SessaoEstudoAulas",
                 c => new
                     {
@@ -122,7 +122,7 @@ namespace AprendeComMinions.Migrations
                 .ForeignKey("dbo.SessaoEstudoes", t => t.SessaoEstudo_SessaoEstudoID, cascadeDelete: true)
                 .ForeignKey("dbo.Aulas", t => t.Aula_AulaID, cascadeDelete: true)
                 .Index(t => t.SessaoEstudo_SessaoEstudoID)
-                .Index(t => t.Aula_AulaID);
+                .Index(t => t.Aula_AulaID);*/
             
             CreateTable(
                 "dbo.TesteSessaoEstudoes",
