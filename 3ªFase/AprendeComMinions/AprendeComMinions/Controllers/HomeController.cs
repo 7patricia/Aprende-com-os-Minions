@@ -27,16 +27,18 @@ namespace AprendeComMinions.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            var email = User.Identity.GetUserName();
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            if (email != "")
+            {
+                Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+                @ViewBag.username = user.Username;
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Utilizadors");
+            }
         }
     }
 }
