@@ -1,0 +1,101 @@
+﻿@model IList<AprendeComMinions.Models.Teste>
+
+@{
+    ViewBag.Title = "Testes";
+}
+		<!-- /section:basics/navbar.layout -->
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+    </script>
+
+    <!-- #section:basics/sidebar -->
+    <div id="sidebar" class="sidebar                  responsive">
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+        </script>
+
+
+
+        <ul class="nav nav-list">
+            <li class="">
+                <a href="@Url.Action("Index","Home")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Hello-icon.png">
+                    <span class="menu-text"> Início </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href="@Url.Action("Index", "Aula")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Amazed-icon.png">
+                    <span class="menu-text">
+                        Aulas
+                    </span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="@Url.Action("Index", "Exercicios")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Reading-icon.png">
+                    <span class="menu-text"> Vamos praticar? </span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="@Url.Action("Index", "Testes")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shout-icon.png">
+                    <span class="menu-text"> Pronto para ser posto à prova? </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("Index", "SessaoEstudoes")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/32/Minion-Bananas-icon.png">
+                    <span class="menu-text"> Sessões de Estudo </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("Details", "Utilizadors")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shy-icon.png">
+                    <span class="menu-text"> Vê Como Te Tens Saído! </span>
+                </a>
+            </li>
+        </ul><!-- /.nav-list -->
+        <img style="margin-top: 70px; margin-left:50px;" src="http://www.designbolts.com/wp-content/uploads/2013/07/DESPICABLE-ME-2-Tim-The-Minion-PNG.png" width="180" hegth="180">
+    </div>
+
+
+    <div class="main-content">
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    <center>Testes</center>
+                </h1>
+            </div>
+            <script type="text/javascript">
+                try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+            </script>
+
+
+            <!-- PAGE CONTENT BEGINS -->
+
+
+
+
+            <div>
+                <ul class="ace-thumbnails clearfix">
+                    @foreach (var teste in Model)
+                    {
+                        <li>
+                            <a class="cboxElement" href="@Url.Action("Teste", "Testes", new { id = teste.TesteID })" data-rel="colorbox">
+                                <img alt="150x150" src="@teste.URL" width="150" height="150">
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.page-content -->
+    </div>
+</div><!-- /.main-content -->

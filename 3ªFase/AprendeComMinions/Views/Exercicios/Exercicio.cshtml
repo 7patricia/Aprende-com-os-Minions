@@ -1,0 +1,200 @@
+﻿@model AprendeComMinions.Models.Exercicio
+@using AprendeComMinions.Models
+
+@{
+    ViewBag.Title = "Exercicio";
+    IList<Resposta> respostas = ViewBag.respostas;
+    int i = 0;
+
+    Pergunta[] perg = new Pergunta[4];
+    Resposta[] resp = new Resposta[4];
+
+}
+<!-- /section:basics/navbar.layout -->
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try { ace.settings.check('main-container', 'fixed') } catch (e) { }
+    </script>
+
+    <!-- #section:basics/sidebar -->
+    <div id="sidebar" class="sidebar                  responsive">
+        <script type="text/javascript">
+            try { ace.settings.check('sidebar', 'fixed') } catch (e) { }
+        </script>
+
+
+
+        <ul class="nav nav-list">
+            <li class="">
+                <a href="@Url.Action("Index","Home")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Hello-icon.png">
+                    <span class="menu-text"> Início </span>
+                </a>
+
+                <b class="arrow"></b>
+            </li>
+
+            <li class="">
+                <a href="@Url.Action("Index", "Aula")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Amazed-icon.png">
+                    <span class="menu-text">
+                        Aulas
+                    </span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="@Url.Action("Index", "Exercicios")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Reading-icon.png">
+                    <span class="menu-text"> Vamos praticar? </span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="@Url.Action("Index", "Testes")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shout-icon.png">
+                    <span class="menu-text"> Pronto para ser posto à prova? </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("Index", "SessaoEstudoes")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/32/Minion-Bananas-icon.png">
+                    <span class="menu-text"> Sessões de Estudo </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="@Url.Action("Details", "Utilizadors")">
+                    <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shy-icon.png">
+                    <span class="menu-text"> Vê Como Te Tens Saído! </span>
+                </a>
+            </li>
+        </ul><!-- /.nav-list -->
+        <img style="margin-top: 150px; margin-left:50px;" src="http://3.bp.blogspot.com/-iyWCYN4hDzA/UxhRJWhIKeI/AAAAAAAAEm8/1vDyyoKBzOI/s1600/minion_png_by_kathyvip-d6ngs5k.png" width="180" hegth="180">
+    </div>
+    <div class="main-content">
+        <div class="main-content-inner">
+
+            <!-- /section:basics/content.breadcrumbs -->
+            <div class="page-content">
+                <div class="page-header">
+                    <h1>
+                        <center>@Model.Tema</center>
+                    </h1>
+                </div><!-- /.page-header -->
+                @using (Html.BeginForm("Terminar", "Exercicios", FormMethod.Post, new { role = "form" }))
+                {
+                    @Html.HiddenFor(m => m.ExercicioID);
+                    @Html.AntiForgeryToken()
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div style="visibility:visible;">
+
+                        <div style="margin-left:150px;margin-top:7px;" class="row">
+                            @foreach (var pergunta in @ViewBag.perguntas) {
+                                perg[i] = pergunta;
+                                resp[i] = respostas.Where(x => x.Pergunta.Equals(pergunta)).First();
+                                i++;                          
+                            }
+                                <div class="col-md-4">
+                                    <div class="control-group">
+
+                                        <img alt="150x150" src="@perg[0].URLImagem " width="150" height="150">
+                                        <div class="checkbox">
+                                            <label class="block">
+                                                <!--<input name="" class="ace" type="radio">-->
+                                                @Html.RadioButtonFor(m => m.R1, resp[0].RespA, new { id = resp[0].RespA })
+                                                @Html.Label(resp[0].RespA, resp[0].RespA)
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="block">
+                                                @Html.RadioButtonFor(m => m.R1, resp[0].RespB, new { id = resp[0].RespB })
+                                                @Html.Label(resp[0].RespB, resp[0].RespB)
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="block">
+                                                @Html.RadioButtonFor(m => m.R1, resp[0].RespC, new { id = resp[0].RespC })
+                                                @Html.Label(resp[0].RespC, resp[0].RespC)
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="block">
+                                                @Html.RadioButtonFor(m => m.R1, resp[0].RespD, new { id = resp[0].RespD })
+                                                @Html.Label(resp[0].RespD, resp[0].RespD)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="control-group">
+
+                                        <img alt="150x150" src="@perg[1].URLImagem " width="150" height="150">
+                                        <div class="checkbox">
+                                            <label class="block">
+                                                <!--<input name="" class="ace" type="radio">-->
+                                                @Html.RadioButtonFor(m => m.R2, resp[1].RespA, new { id = resp[1].RespA })
+                                                @Html.Label(resp[1].RespA, resp[1].RespA)
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="block">
+                                                @Html.RadioButtonFor(m => m.R2, resp[1].RespB, new { id = resp[1].RespB })
+                                                @Html.Label(resp[1].RespB, resp[1].RespB)
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="block">
+                                                @Html.RadioButtonFor(m => m.R2, resp[1].RespC, new { id = resp[1].RespC })
+                                                @Html.Label(resp[1].RespC, resp[1].RespC)
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label class="block">
+                                                @Html.RadioButtonFor(m => m.R2, resp[1].RespD, new { id = resp[1].RespD })
+                                                @Html.Label(resp[1].RespD, resp[1].RespD)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-md-4">
+                                <div class="control-group">
+
+                                    <img alt="150x150" src="@perg[2].URLImagem " width="150" height="150">
+                                    <div class="checkbox">
+                                        <label class="block">
+                                            <!--<input name="" class="ace" type="radio">-->
+                                            @Html.RadioButtonFor(m => m.R3, resp[2].RespA, new { id = resp[2].RespA })
+                                            @Html.Label(resp[2].RespA, resp[2].RespA)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="block">
+                                            @Html.RadioButtonFor(m => m.R3, resp[2].RespB, new { id = resp[2].RespB })
+                                            @Html.Label(resp[2].RespB, resp[2].RespB)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="block">
+                                            @Html.RadioButtonFor(m => m.R3, resp[2].RespC, new { id = resp[2].RespC })
+                                            @Html.Label(resp[2].RespC, resp[2].RespC)
+                                        </label>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="block">
+                                            @Html.RadioButtonFor(m => m.R3, resp[2].RespD, new { id = resp[2].RespD })
+                                            @Html.Label(resp[2].RespD, resp[2].RespD)
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    }
+                    </div>
+                    <button style="margin-top: 20px;margin-left:467px;" class="btn btn-lg btn-primary">Terminar</button>
+        <a href="@Url.Action("Index", "Home")"><button style="margin-top: 20px;" class="btn btn-lg btn-primary">Desistir</button></a>
+        <!-- PAGE CONTENT ENDS -->
+        }
+</div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
