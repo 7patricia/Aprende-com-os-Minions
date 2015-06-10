@@ -86,6 +86,9 @@
                                 <li>
                                     <a class="cboxElement" href="@Url.Action("Exercicio", "Exercicios", new { id = exercicio.ExercicioID })" data-rel="colorbox">
                                         <img alt="150x150" src="@exercicio.URLImagem" width="150" height="150">
+                                        <div class="text">
+                                            <div class="inner">@exercicio.Tema</div>
+                                        </div>
                                     </a>
                                 </li>
                             }

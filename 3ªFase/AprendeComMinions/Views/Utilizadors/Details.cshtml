@@ -45,7 +45,7 @@
                 </a>
             </li>
 
-            <li class="active">
+            <li class="">
                 <a href="@Url.Action("Index", "Testes")">
                     <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shout-icon.png">
                     <span class="menu-text"> Pronto para ser posto à prova? </span>
@@ -57,7 +57,7 @@
                     <span class="menu-text"> Sessões de Estudo </span>
                 </a>
             </li>
-            <li class="">
+            <li class="active">
                 <a href="@Url.Action("Details", "Utilizadors")">
                     <img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/24/Minion-Shy-icon.png">
                     <span class="menu-text"> Vê Como Te Tens Saído! </span>
@@ -82,7 +82,28 @@
 
             <!-- PAGE CONTENT BEGINS -->
 
+            <div style="font-size:20px" class="col-xs-8">
+                De todas as perguntas a que respondeste, acertaste...
+                <div class="progress pos-rel" data-percent="@(@ViewBag.certas*100)%">
+                    <div class="progress-bar" style="width:@(@ViewBag.certas*100)%;"></div>
+                </div>
+                De todas as perguntas a que respondeste, erraste...
+                <div class="progress pos-rel" data-percent="@(@ViewBag.erradas*100)%">
+                    <div class="progress-bar" style="width:@(@ViewBag.erradas*100)%;"></div>
+                </div>
+                
+                Número de perguntas a que já respondeste: @Model.NrPerguntasResp
+                <br>
+                <br>
+                Número de testes a que já respondeste: @Model.NrTestesRealizados
+                <br>
+                <br>
+                Número de sessões de estudo que já criaste: @Model.NrSessoesEstudo
+            </div>
+        
 
+         
+            
 
 
            

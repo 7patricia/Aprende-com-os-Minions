@@ -19,7 +19,10 @@ namespace AprendeComMinions.Models
         public int ExerciciosResolvidos { get; set; }
         public virtual Utilizador Utilizador { get; set; }
 
+        [NotMapped]
+        public string R1 { get; set; }
     }
 
+    
 
 }

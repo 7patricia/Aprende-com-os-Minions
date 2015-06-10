@@ -90,6 +90,9 @@
                     <li>
                         <a class="cboxElement" href="@Url.Action("Show", "Aula", new { id = aula.AulaID })" data-rel="colorbox">
                             <img alt="150x150" src="@aula.URLImagem" width="150" height="150">
+                            <div class="text">
+                                <div class="inner">@aula.Titulo</div>
+                            </div>
                         </a>
                     </li>
                     }

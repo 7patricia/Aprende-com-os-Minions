@@ -65,26 +65,36 @@ namespace AprendeComMinions.Controllers
             }
             else
             {
-                return View(db.Utilizadores.ToList());
+                return View(user);
             }
 
            
         }
 
         // GET: Utilizadors/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
-            if (id == null)
+             var email = User.Identity.GetUserName();
+
+            if (email != "")
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                Utilizador user = db.Utilizadores.Where(x => x.Username.Equals(email)).First();
+                @ViewBag.username = user.Username;
+                
+                @ViewBag.certas = PRespCertas(user);
+                @ViewBag.erradas = PRespErradas(user);
+               
+               
+                return View(user);
             }
-            Utilizador utilizador = db.Utilizadores.Find(id);
-            if (utilizador == null)
+            else
             {
-                return HttpNotFound();
+                return RedirectToAction("Login", "Utilizadors");
             }
-            return View(utilizador);
-        }
+
+               
+            }
+        
 
         // GET: Utilizadors/Create
         public ActionResult Create()
@@ -262,16 +272,29 @@ namespace AprendeComMinions.Controllers
             if (((u.NrRespostasCertas / u.NrPerguntasResp) > 0.7) && (u.GrauDif < 3)) u.GrauDif++;
         }
 
-        public float PRespCertas(Utilizador u) {
-            float percentagem = u.NrRespostasCertas / u.NrPerguntasResp;
+        public double PRespCertas(Utilizador u) {
+            double percentagem = 0;
+            if ((u.NrRespostasCertas != 0) && (u.NrPerguntasResp != 0))
+            {
+              percentagem = (u.NrRespostasCertas /(double) u.NrPerguntasResp);
+            }
+          
             return percentagem;
         }
 
-        public float PRespErradas(Utilizador u)
+        public double PRespErradas(Utilizador u)
         {
-            float percentagem = u.NrRespostasErradas / u.NrPerguntasResp;
+            double percentagem = 0;
+            if ((u.NrRespostasErradas != 0) && (u.NrPerguntasResp != 0))
+            {
+              percentagem = u.NrRespostasErradas / (double)u.NrPerguntasResp;
+            }
+          
             return percentagem;
+        
         }
+
+        
         #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";

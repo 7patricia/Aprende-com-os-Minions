@@ -1,6 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
+
 namespace AprendeComMinions
 {
     public class BundleConfig

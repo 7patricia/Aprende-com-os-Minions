@@ -25,7 +25,9 @@ namespace AprendeComMinions.Controllers
             {
                 Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
                 @ViewBag.username = user.Username;
-                return View();
+                
+                IList<SessaoEstudo> sessoes = db.SessoesEstudo.Where(x => x.Utilizador.UtilizadorID == user.UtilizadorID).ToList();
+                return View(sessoes);
             }
             else
             {
@@ -34,24 +36,39 @@ namespace AprendeComMinions.Controllers
         }
 
         // GET: SessaoEstudoes/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Sessao(int? id)
         {
-            if (id == null)
+            var email = User.Identity.GetUserName();
+
+            if (email != "")
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+                SessaoEstudo sessaoEstudo = db.SessoesEstudo.Find(id);
+                
+                @ViewBag.username = user.Username;
+                return View(sessaoEstudo);  
             }
-            SessaoEstudo sessaoEstudo = db.SessoesEstudo.Find(id);
-            if (sessaoEstudo == null)
-            {
-                return HttpNotFound();
+            return RedirectToAction("Login", "Utilizadors");  
             }
-            return View(sessaoEstudo);
-        }
+        
 
         // GET: SessaoEstudoes/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            return View();
+            var email = User.Identity.GetUserName();
+
+            if (email != "")
+            {
+                Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+                @ViewBag.username = user.Username;
+
+               
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Utilizadors");
+            }
         }
 
         // POST: SessaoEstudoes/Create
@@ -68,6 +85,31 @@ namespace AprendeComMinions.Controllers
                 return RedirectToAction("Index");
             }
             return View(sessaoEstudo);
+        }
+
+        //POST: Exercicios/Terminar
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Criar(SessaoEstudo e)
+        {
+            var email = User.Identity.GetUserName();
+
+            if (email != "")
+            {
+                Utilizador user = db.Utilizadores.Where(x => x.Username == email).First();
+                @ViewBag.username = user.Username;
+
+                String r1 = e.R1;
+               
+
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return RedirectToAction("Login", "Utilizadors");
+            }
+
         }
 
         // GET: SessaoEstudoes/Edit/5

@@ -1,6 +1,7 @@
-﻿@{
-    ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@model AprendeComMinions.Models.SessaoEstudo
+
+@{
+    ViewBag.Title = "Nova Sessão de Estudo";
 }
 <!-- /section:basics/navbar.layout -->
 <div class="main-container" id="main-container">
@@ -75,29 +76,42 @@
                 </div><!-- /.page-header -->
                 <!-- PAGE CONTENT BEGINS -->
                 <div class="row">
-                    <div style="margin-left:510px;" class="col-md-6">
-                        <h1 style="color:#1F3A93">
-                            Temas
-                            <br>
-                            <br>
-                        </h1>
-                        <div style="margin-left:-10px;" class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                Escolher
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tema1</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tema2</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tema2</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tema2</a></li>
-                            </ul>
-                        </div>
-                    </div>
+    <div style="margin-left:510px;" class="col-md-6">
+        <h1 style="color:#1F3A93">
+            Temas
+            </div>
+            <br>
+            <br>
+        </h1>
+                </div>
 
+        @using (Html.BeginForm("Criar", "SessaoEstudoes", FormMethod.Post, new { role = "form" }))
+        {
+            <div style="margin-left:490px;" class="checkbox">
+                <label class="block">
+                    @Html.RadioButtonFor(m => m.R1, "Areas", new { id = "Areas" })
+                    @Html.Label("Areas")
+                </label>
+            </div>
+    <div style="margin-left:490px;" class="checkbox">
+        <label class="block">
+            @Html.RadioButtonFor(m => m.R1, "Perimetros", new { id = "Perimetros" })
+            @Html.Label("Perimetros")
+        </label>
+    </div>
+    <div style="margin-left:490px;" class="checkbox">
+        <label class="block">
+            @Html.RadioButtonFor(m => m.R1, "Medidas", new { id = "Medidas" })
+            @Html.Label("Medidas")
+        </label>
+    </div>
 
+                <button style="margin-top: 200px;margin-left:900px;" class="btn btn-lg btn-primary">Criar</button>
+        
 
-
-                    <a href=""><button style="margin-top: 200px;margin-left:900px;" class="btn btn-lg btn-primary">Criar</button></a>
+            
+        }
+</div>
+        </div>
                     <!-- PAGE CONTENT ENDS -->
 
