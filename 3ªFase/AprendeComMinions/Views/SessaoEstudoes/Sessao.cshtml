@@ -82,32 +82,45 @@
                         <div style="margin-left:250px" class="col-xs-6">
 
                             <label class="control-label bolder blue">Aulas</label>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; max-width=200px">
-                                    0%
-                                </div>
-                            </div>
+                            @foreach (var aula in Model.Aulas) {
+                                <li>
+                                    <a class="cboxElement" href="@Url.Action("Show", "Aula", new { id = aula.AulaID })" data-rel="colorbox">
+                                        <img alt="150x150" src="@aula.URLImagem" width="150" height="150">
+                                        <div class="text">
+                                            <div class="inner">@aula.Titulo</div>
+                                        </div>
+                                    </a>
+                                </li>
+
                         </div>
                     </div>
 
                     <div class="row">
                         <div style="margin-left:250px" class="col-xs-6">
                             <label class="control-label bolder blue">Exercícios</label>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 50%;">
-                                    50%
-                                </div>
-                            </div>
+                           @foreach (var exercicio in Model.Exercicios) {
+                            <li>
+                                <a class="cboxElement" href="@Url.Action("Exercicio", "Exercicios", new { id = exercicio.ExercicioID })" data-rel="colorbox">
+                                    <img alt="150x150" src="@exercicio.URLImagem" width="150" height="150">
+                                    <div class="text">
+                                        <div class="inner">@exercicio.Tema</div>
+                                    </div>
+                                </a>
+                            </li>
                         </div>
                     </div>
                     <div class="row">
                         <div style="margin-left:250px" class="col-xs-6">
                             <label class="control-label bolder blue">Testes</label>
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: 80%;">
-                                    80%
-                                </div>
-                            </div>
+                            @foreach (var teste in Model.Testes) {
+                                <li>
+                                    <a class="cboxElement" href="@Url.Action("Teste", "Testes", new { id = teste.TesteID })" data-rel="colorbox">
+                                        <img alt="150x150" src="@teste.URL" width="150" height="150">
+                                        <div class="text">
+                                            <div class="inner">@teste.Tema</div>
+                                        </div>
+                                    </a>
+                                </li>
                         </div>
                     </div>
                 </center>

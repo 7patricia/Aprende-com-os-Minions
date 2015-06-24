@@ -87,9 +87,9 @@ namespace AprendeComMinions.Controllers
             return View(sessaoEstudo);
         }
 
-        //POST: Exercicios/Terminar
+       
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        /*[ValidateAntiForgeryToken]*/
         public ActionResult Criar(SessaoEstudo e)
         {
             var email = User.Identity.GetUserName();
@@ -100,7 +100,8 @@ namespace AprendeComMinions.Controllers
                 @ViewBag.username = user.Username;
 
                 String r1 = e.R1;
-               
+
+                CriaSessao(user, r1);
 
                 return RedirectToAction("Index");
 
@@ -219,9 +220,11 @@ namespace AprendeComMinions.Controllers
             //sessao.AulasVistas= new List<Aula> ();;
             //sessao.ExerciciosResolvidos= new List<Exercicio> ();;
             //sessao.TestesResolvidos = new List<Teste>();
-            //sessao.Date
+            DateTime agora = DateTime.Now;
+            sessao.Data = agora;
             u.NrSessoesEstudo++;
             u.SessaoEstudo.Add(sessao);
+            db.SessoesEstudo.Add(sessao);
         }
 
        public float PAulasAssistidas(SessaoEstudo se) {
