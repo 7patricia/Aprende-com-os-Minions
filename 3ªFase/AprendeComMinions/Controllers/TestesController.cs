@@ -190,33 +190,40 @@ namespace AprendeComMinions.Controllers
                 if (perguntas.ElementAt(0).RespCerta.Equals(r1))
                 {
                     user.NrRespostasCertas++;
+                    db.SaveChanges();
                 }
                 else
                 {
                     user.NrRespostasErradas++;
+                    db.SaveChanges();
                 }
 
 
                 if (perguntas.ElementAt(1).RespCerta.Equals(r2))
                 {
                     user.NrRespostasCertas++;
+                    db.SaveChanges();
                 }
                 else
                 {
                     user.NrRespostasErradas++;
+                    db.SaveChanges();
                 }
 
                 if (perguntas.ElementAt(2).RespCerta.Equals(r3))
                 {
                     user.NrRespostasCertas++;
+                    db.SaveChanges();
                 }
                 else
                 {
                     user.NrRespostasErradas++;
+                    db.SaveChanges();
                 }
 
                 user.NrPerguntasResp = user.NrPerguntasResp + 3;
                 user.NrTestesRealizados++;
+                db.SaveChanges();
 
                 return RedirectToAction("Index");
 

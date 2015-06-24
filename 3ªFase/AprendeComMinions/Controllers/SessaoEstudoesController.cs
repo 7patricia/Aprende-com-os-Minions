@@ -225,6 +225,7 @@ namespace AprendeComMinions.Controllers
             u.NrSessoesEstudo++;
             u.SessaoEstudo.Add(sessao);
             db.SessoesEstudo.Add(sessao);
+            db.SaveChanges();
         }
 
        public float PAulasAssistidas(SessaoEstudo se) {
