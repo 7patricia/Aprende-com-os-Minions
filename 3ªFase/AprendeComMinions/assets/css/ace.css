@@ -19954,3 +19954,13 @@ input.typeahead.scrollable ~ .tt-dropdown-menu {
     display: none !important;
   }
 }
+
+.oval-speech {
+    position: absolute;
+    width: 270px;
+    padding: 50px 40px;
+    margin: 1em auto 50px;
+    text-align: center;
+    background: transparent linear-gradient(#F4D03F, #f1c40f) repeat scroll 0% 0%;
+    border-radius: 220px / 120px;
+}

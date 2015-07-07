@@ -225,6 +225,9 @@ namespace AprendeComMinions.Controllers
                 user.NrTestesRealizados++;
                 db.SaveChanges();
 
+                if ((user.NrRespostasCertas / user.NrRespostasErradas > 0.6) && (user.NrPerguntasResp >= 10) && (user.GrauDif == 1)) { user.GrauDif = 2; db.SaveChanges(); }
+
+                if ((user.NrRespostasCertas / user.NrRespostasErradas > 0.8) && (user.NrPerguntasResp >= 30) && (user.GrauDif == 2)) { user.GrauDif = 3; db.SaveChanges(); }
                 return RedirectToAction("Index");
 
             }

@@ -58,7 +58,7 @@
                                     Preferências
                                 </a>
                             </li>
-                            <li onclick="myFunction()">
+                            <li>
                                 <a href="#">
                                     Repor Estatistícas
                                 </a>
@@ -79,27 +79,11 @@
             <!-- /section:basics/navbar.dropdown -->
         </div><!-- /.navbar-container -->
     </div>
-    <script>
-    function myFunction() {
-        var x;
-        if (confirm("Tens a certeza que pretendes eliminar todos os teus dados?") == true) {
-            x = "Dados Eliminados";
-        } else {
-            x = "You pressed Cancel!";
-        }
-        document.getElementById("demo").innerHTML = x;
-    }
-    </script>
-    }
-
-    <div class="main-container" id="main-container">
-        <script type="text/javascript">
-            try { ace.settings.check('main-container', 'fixed') } catch (e) { }
-        </script>
+    
         
 
         @RenderBody()
-
+    }
     </div>
         @*@Scripts.Render("~/bundles/jquery")
             @Scripts.Render("~/bundles/bootstrap")*@
